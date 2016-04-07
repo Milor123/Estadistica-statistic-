@@ -66,6 +66,7 @@ class estadistica(object):
         self.amplitud = self.rango/self.clase
         self.exceso = self.rango-self.amplitud*self.clase
         if self.exceso > 0 and self.flag:
+            self.viejorango = self.rango
             self.exc = self.exceso
             self.exceso = None
             self.readdata()
@@ -127,7 +128,7 @@ class estadistica(object):
     #print newampliado , 'newampliado'
     def printme(self):
         print self.data, '\n'
-        print 'Dato Minimo: {} \nDato Maximo: {}\nRango: {}\nTamano de Clase: {}\nAmplitud: {}\nExceso: {}\nTamano Muestra: {}\nMarca de clase: {}\n'.format(self.dmin, self.dmax, self.rango, self.clase, self.amplitud, self.exceso, self.n, self.marca_clase)
+        print 'Dato Minimo: {} \nDato Maximo: {}\nViejo Rango: {}\nRango: {}\nTamano de Clase: {}\nAmplitud: {}\nExceso: {}\nTamano Muestra: {}\nMarca de clase: {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.amplitud, self.exceso, self.n, self.marca_clase)
         for v in self.tabla:
             print v
 
