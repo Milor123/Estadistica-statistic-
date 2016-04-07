@@ -58,8 +58,10 @@ class estadistica(object):
 
         try:
             self.data = map(int, [x for x in self.data if not x==''])
+            self.id=0
         except:
             self.data = map(float, [x for x in self.data if not x==''])
+            self.id=1
         self.data.sort()
         self.dmin = min(self.data)
         self.dmax = max(self.data)
@@ -68,7 +70,10 @@ class estadistica(object):
         self.clase = round(1+3.322*(log(self.n,10))) # base 10
         self.decimalclase = 1+3.322*(log(self.n,10))
         self.clase = int(self.clase)
-        self.amplitud = (self.rango/self.clase)
+        if self.id==1:
+            self.amplitud = (self.rango/self.clase)
+        else:
+            self.amplitud = int(round(float(self.rango)/float(self.clase)))
         self.exceso = self.rango-self.amplitud*self.clase
         if self.exceso > 0 and self.flag and self.never:
             self.tmpampliado = self.dmin
