@@ -59,9 +59,9 @@ class estadistica(object):
         except:
             self.data = map(float, [x for x in self.data if not x==''])
         self.data.sort()
-        self.dmin = min(self.data)+ self.exc
+        self.dmin = min(self.data)
         self.dmax = max(self.data)
-        self.rango = self.dmax-self.dmin
+        self.rango = (self.dmax-self.dmin)+(self.exc-1)
         self.n = len(self.data)
         self.clase = round(1+3.322*(log(self.n,10))) # base 10
         self.decimalclase = 1+3.322*(log(self.n,10))
