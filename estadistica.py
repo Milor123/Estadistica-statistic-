@@ -124,7 +124,7 @@ class estadistica(object):
     #print newampliado , 'newampliado'
     def printme(self):
         print self.data, '\n'
-        print 'Dato Minimo: {} \nDato Maximo: {}\nViejo Rango: {}\nRango: {}\nTamano de Clase: {}\nViejoAmplitud {}\nAmplitud: {}\nExceso: {}\nTamano Muestra: {}\nMarca de clase: {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.exceso, self.n, self.marca_clase)
+        print 'Dato Minimo: {} \nDato Maximo: {}\nViejo Rango: {}\nRango: {}\nTamano de Clase: {}\nVieja Amplitud {}\nAmplitud: {}\nExceso: {}\nTamano Muestra: {}\nMarca de clase: {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.exceso, self.n, self.marca_clase)
         for v in self.tabla:
             print v
 
