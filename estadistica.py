@@ -41,14 +41,8 @@ class estadistica(object):
         self.data = """
 
 
-1959         4534         7020         6725         6964         7428
-2802         2462         4000        3378         7343         4189
-2412         7624         1548        4801         737         5321
-6837        8639         7417         6082         10241         962
-5099        6627         4484         5633         4148         6588
-6472        8327         8225         6142         12130         9166
-5749        1801         4632         9359          8973         849
-3894         5847         4327
+52       57       61    64    67    69    74    77    82    88
+55       61    63    65    68    72    74    79    84    93
 
 """
 
@@ -86,7 +80,7 @@ class estadistica(object):
             # arreglar despues
             self.viejoamplitud = (self.viejorango/self.clase)
             self.viejoexceso = self.viejorango-(self.viejoamplitud*self.clase)
-            self.exc = self.exceso
+            self.exc = self.exceso+1
             self.exceso = None
             self.flag = False
             self.readdata()
@@ -133,10 +127,18 @@ class estadistica(object):
 
     def tablasimple(self):
         newampliado = self.valoresampliados
+        self.primeraentrada = True
         for a in range(self.clase):
             if a+1>self.clase:
                 break
-            valuesoftable = filter(lambda x: x if newampliado[a]<=x<newampliado[a+1] else False, self.data)
+            # for capture values in ranges
+            if self.primeraentrada:
+                valuesoftable = filter(lambda x: x if newampliado[a]<=x<newampliado[a+1] else False, self.data)
+            elif a==self.clase:
+                valuesoftable = filter(lambda x: x if newampliado[a]<x<=newampliado[a+1] else False, self.data)
+            else:
+                valuesoftable = filter(lambda x: x if newampliado[a]<x<newampliado[a+1] else False, self.data)
+            # end if
             self.tabla_withvalues.append({"{}, {}".format(newampliado[a], newampliado[a+1]): valuesoftable}) # firt number of range is < that x and x < that the next
             self.tabla.append({"{}, {}".format(newampliado[a], newampliado[a+1]): len(valuesoftable)}) # firt number of range is < that x and x < that the next
             if valuesoftable:
