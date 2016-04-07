@@ -115,7 +115,7 @@ class estadistica(object):
         for a in range(self.clase):
             if a+1>self.clase:
                 break
-            valuesoftable = filter(lambda x: x if newampliado[a]<x<newampliado[a+1] else False, self.data)
+            valuesoftable = filter(lambda x: x if newampliado[a]<=x<newampliado[a+1] else False, self.data)
             self.tabla_withvalues.append({"{}, {}".format(newampliado[a], newampliado[a+1]): valuesoftable}) # firt number of range is < that x and x < that the next
             self.tabla.append({"{}, {}".format(newampliado[a], newampliado[a+1]): len(valuesoftable)}) # firt number of range is < that x and x < that the next
             if valuesoftable:
