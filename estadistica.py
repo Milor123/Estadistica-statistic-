@@ -40,11 +40,12 @@ class estadistica(object):
         # Paste your number in the next variable
         self.data = """
 
-
-52       57       61    64    67    69    74    77    82    88
-55       61    63    65    68    72    74    79    84    93
-
-"""
+0    4    8    10    12     13    15    16    17    19    20    24
+0    4    8    10    12     13    15    16    18    19    21    28
+1    5    8    10    12     13    16    16    18    19    21    29
+2    6    9    10    12     14    16    16    18    20    21    29
+2    7    9    11    13     14    16    17    18    20    21    32
+4    8   10   11    13     14    16    17    18    20    22    33"""
 
         self.data = re.sub(r'([0-9]+[.]{0,1}[0-9]{0,})[\s\t\n]+', r'\g<1>,', self.data)
         self.data = self.data.split(',')
@@ -80,7 +81,7 @@ class estadistica(object):
             # arreglar despues
             self.viejoamplitud = (self.viejorango/self.clase)
             self.viejoexceso = self.viejorango-(self.viejoamplitud*self.clase)
-            self.exc = self.exceso+1
+            self.exc = self.exceso
             self.exceso = None
             self.flag = False
             self.readdata()
