@@ -27,7 +27,8 @@ class estadistica(object):
     tabla_withvalues = []
     marca_clase = []
     flag = True
-
+    antibucle = True
+    antibucle2 = True
     def __init__(self):
         self.readdata()
 
@@ -35,15 +36,9 @@ class estadistica(object):
         # Paste your number in the next variable
         self.data = """
 
-
-
-206           167       175       204       123     138
-197           187       193       124       137     141
-142           192       197       109       126      127
-181           171       163       146       124      184
-101           201       133       141       152      132
-
-
+42 65 36 37 58 57 61 58 54 45 51 50 60 61 42 54 62 50 62 50
+42 56 53 56 46 56 53 40 62 62 50 56 45 54 52 51 61 45 58 48
+55 60 36 56 37 60 46 57 65 57
 
 """
 
@@ -63,7 +58,7 @@ class estadistica(object):
         self.clase = round(1+3.322*(log(self.n,10))) # base 10
         self.decimalclase = 1+3.322*(log(self.n,10))
         self.clase = int(self.clase)
-        self.amplitud = self.rango/self.clase
+        self.amplitud = (self.rango/self.clase)
         self.exceso = self.rango-self.amplitud*self.clase
         if self.exceso > 0 and self.flag:
             self.viejorango = self.rango
@@ -90,8 +85,6 @@ class estadistica(object):
             self.maxofvaloresampliados = float(self.maxofvaloresampliados)
         else:
             self.maxofvaloresampliados = max(self.valoresampliados)
-        self.antibucle= False
-        self.antibucle2 = False
         if self.maxofvaloresampliados>self.dmax:
             if self.antibucle or self.antibucle2:
                 self.exc -= 1
@@ -103,10 +96,9 @@ class estadistica(object):
             if self.antibucle or self.antibucle2:
                 self.exc += 1
                 self.antibucle2 = False
-                self.flag = false
+                self.flag = False
                 self.readdata()
                 return
-        # end excess
         self.tablasimple()
         return self.valoresampliados
                 # if not max(newampliado)==dmax:
