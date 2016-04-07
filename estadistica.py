@@ -82,6 +82,8 @@ class estadistica(object):
             if self.tmpampliado >= self.dmax:
                 self.never = False
             self.viejorango = self.dmax-self.dmin
+            # Nota en viejoamplitud tambien debo considerar los decimales,
+            # arreglar despues
             self.viejoamplitud = (self.viejorango/self.clase)
             self.viejoexceso = self.viejorango-(self.viejoamplitud*self.clase)
             self.exc = self.exceso
@@ -138,7 +140,7 @@ class estadistica(object):
             self.tabla_withvalues.append({"{}, {}".format(newampliado[a], newampliado[a+1]): valuesoftable}) # firt number of range is < that x and x < that the next
             self.tabla.append({"{}, {}".format(newampliado[a], newampliado[a+1]): len(valuesoftable)}) # firt number of range is < that x and x < that the next
             if valuesoftable:
-                self.marca_clase.append((min(valuesoftable)+max(valuesoftable))/2)
+                self.marca_clase.append((newampliado[a]+newampliado[a+1])/2)
             else: # if not found values between of interval class
                 self.marca_clase.append(0)
     #print newampliado , 'newampliado'
