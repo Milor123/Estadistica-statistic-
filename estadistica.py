@@ -26,11 +26,13 @@ class estadistica(object):
     tabla = []
     viejorango = None
     viejoamplitud = []
+    viejoexceso = None
     tabla_withvalues = []
     marca_clase = []
     flag = True
     antibucle = True
     antibucle2 = True
+    never = True
     def __init__(self):
         self.readdata()
 
@@ -38,9 +40,15 @@ class estadistica(object):
         # Paste your number in the next variable
         self.data = """
 
-42 65 36 37 58 57 61 58 54 45 51 50 60 61 42 54 62 50 62 50
-42 56 53 56 46 56 53 40 62 62 50 56 45 54 52 51 61 45 58 48
-55 60 36 56 37 60 46 57 65 57
+
+1959         4534         7020         6725         6964         7428
+2802         2462         4000        3378         7343         4189
+2412         7624         1548        4801         737         5321
+6837        8639         7417         6082         10241         962
+5099        6627         4484         5633         4148         6588
+6472        8327         8225         6142         12130         9166
+5749        1801         4632         9359          8973         849
+3894         5847         4327
 
 """
 
@@ -62,12 +70,18 @@ class estadistica(object):
         self.clase = int(self.clase)
         self.amplitud = (self.rango/self.clase)
         self.exceso = self.rango-self.amplitud*self.clase
-        if self.exceso > 0 and self.flag:
+        if self.exceso > 0 and self.flag and self.never:
+            self.tmpampliado = self.dmin
+            for x in range(self.clase):
+                self.tmpampliado += self.amplitud
+            if self.tmpampliado >= self.dmax:
+                self.never = False
             self.viejorango = self.dmax-self.dmin
             self.viejoamplitud = (self.viejorango/self.clase)
             self.viejoexceso = self.viejorango-(self.viejoamplitud*self.clase)
-            self.exc = self.rango
+            self.exc = self.exceso
             self.exceso = None
+            self.flag = False
             self.readdata()
             return
 
