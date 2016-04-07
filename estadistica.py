@@ -24,6 +24,7 @@ class estadistica(object):
     exc = 0
     newampliado = []
     tabla = []
+    viejorango = None
     tabla_withvalues = []
     marca_clase = []
     flag = True
@@ -61,8 +62,8 @@ class estadistica(object):
         self.amplitud = (self.rango/self.clase)
         self.exceso = self.rango-self.amplitud*self.clase
         if self.exceso > 0 and self.flag:
-            self.viejorango = self.rango
-            self.exc = self.exceso
+            self.viejorango = self.dmax-self.dmin
+            self.exc = self.rango
             self.exceso = None
             self.readdata()
             return
@@ -79,7 +80,7 @@ class estadistica(object):
         for x in range(self.clase):
             self.ampliado += self.amplitud
             self.valoresampliados.append(self.ampliado)
-        # the nex code is for recreate excess
+        #the next code is for recreate excess
         if isinstance(max(self.valoresampliados), float):
             self.maxofvaloresampliados = '%.1f' % round(max(self.valoresampliados), 1)
             self.maxofvaloresampliados = float(self.maxofvaloresampliados)
@@ -99,6 +100,7 @@ class estadistica(object):
                 self.flag = False
                 self.readdata()
                 return
+        # end cycle
         self.tablasimple()
         return self.valoresampliados
                 # if not max(newampliado)==dmax:
