@@ -26,6 +26,7 @@ class estadistica(object):
     tabla = []
     tabla_withvalues = []
     marca_clase = []
+    flag = True
 
     def __init__(self):
         self.readdata()
@@ -33,12 +34,18 @@ class estadistica(object):
     def readdata(self):
         # Paste your number in the next variable
         self.data = """
-33.1    33.9    34.2    34.5    34.7    35.2
-33.4    34.0    34.2    34.5    34.8    35.6
-33.6    34.1    34.3    34.6    34.9    35.8
-33.7    34.2    34.3    34.6    35.1    36.0
-33.4    34.2    34.3    34.6    35.1    36.1
-33.8    34.2    34.3    34.7    35.2    36.5"""
+
+
+
+206           167       175       204       123     138
+197           187       193       124       137     141
+142           192       197       109       126      127
+181           171       163       146       124      184
+101           201       133       141       152      132
+
+
+
+"""
 
         self.data = re.sub(r'([0-9]+[.]{0,1}[0-9]{0,})[\s\t\n]+', r'\g<1>,', self.data)
         self.data = self.data.split(',')
@@ -58,8 +65,7 @@ class estadistica(object):
         self.clase = int(self.clase)
         self.amplitud = self.rango/self.clase
         self.exceso = self.rango-self.amplitud*self.clase
-
-        if self.exceso > 0:
+        if self.exceso > 0 and self.flag:
             self.exc = self.exceso
             self.exceso = None
             self.readdata()
@@ -78,20 +84,27 @@ class estadistica(object):
             self.ampliado += self.amplitud
             self.valoresampliados.append(self.ampliado)
         # the nex code is for recreate excess
-        self.maxofvaloresampliados = '%.1f' % round(max(self.valoresampliados), 1)
-        self.maxofvaloresampliados = float(self.maxofvaloresampliados)
+        if isinstance(max(self.valoresampliados), float):
+            self.maxofvaloresampliados = '%.1f' % round(max(self.valoresampliados), 1)
+            self.maxofvaloresampliados = float(self.maxofvaloresampliados)
+        else:
+            self.maxofvaloresampliados = max(self.valoresampliados)
+        self.antibucle= False
+        self.antibucle2 = False
         if self.maxofvaloresampliados>self.dmax:
-            print max(self.valoresampliados), 'xx' , self.dmax
-            print float(max(self.valoresampliados))>float(self.dmax)
-            print 'you aqui'
-
-            self.exc += 1
-            self.readdata()
-            return
+            if self.antibucle or self.antibucle2:
+                self.exc -= 1
+                self.antibucle = False
+                self.flag = False
+                self.readdata()
+                return
         elif self.maxofvaloresampliados<self.dmax:
-            self.exc -= 1
-            self.readdata()
-            return
+            if self.antibucle or self.antibucle2:
+                self.exc += 1
+                self.antibucle2 = False
+                self.flag = false
+                self.readdata()
+                return
         # end excess
         self.tablasimple()
         return self.valoresampliados
