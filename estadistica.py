@@ -29,26 +29,16 @@ class estadistica(object):
 
     def __init__(self):
         self.readdata()
-        self.ampliar()
-        self.tablasimple()
 
     def readdata(self):
         # Paste your number in the next variable
         self.data = """
-
-
-
-          737    2462   4327   5633   6627    7428   10241
-                 847    2802   4534   5749   6725    7624   12130
-                 962    3378   4632   5847   6837    8225
-          1548    3894   4484   6082   6964    8327
-          1801    4000   4801   6142   7020    8639
-          1959    4148   5099   6472   7343    8973
-          2412    4189   5321   6588   7417    9166
-
-
-
-"""
+33.1    33.9    34.2    34.5    34.7    35.2
+33.4    34.0    34.2    34.5    34.8    35.6
+33.6    34.1    34.3    34.6    34.9    35.8
+33.7    34.2    34.3    34.6    35.1    36.0
+33.4    34.2    34.3    34.6    35.1    36.1
+33.8    34.2    34.3    34.7    35.2    36.5"""
 
         self.data = re.sub(r'([0-9]+[.]{0,1}[0-9]{0,})[\s\t\n]+', r'\g<1>,', self.data)
         self.data = self.data.split(',')
@@ -61,7 +51,7 @@ class estadistica(object):
         self.data.sort()
         self.dmin = min(self.data)
         self.dmax = max(self.data)
-        self.rango = (self.dmax-self.dmin)+(self.exc-1)
+        self.rango = (self.dmax-self.dmin)+(self.exc)
         self.n = len(self.data)
         self.clase = round(1+3.322*(log(self.n,10))) # base 10
         self.decimalclase = 1+3.322*(log(self.n,10))
@@ -81,11 +71,29 @@ class estadistica(object):
         self.tabla = []
         self.tabla_withvalues = []
         self.marca_clase= []
+        self.ampliar()
 
     def ampliar(self):
         for x in range(self.clase):
             self.ampliado += self.amplitud
             self.valoresampliados.append(self.ampliado)
+        # the nex code is for recreate excess
+        self.maxofvaloresampliados = '%.1f' % round(max(self.valoresampliados), 1)
+        self.maxofvaloresampliados = float(self.maxofvaloresampliados)
+        if self.maxofvaloresampliados>self.dmax:
+            print max(self.valoresampliados), 'xx' , self.dmax
+            print float(max(self.valoresampliados))>float(self.dmax)
+            print 'you aqui'
+
+            self.exc += 1
+            self.readdata()
+            return
+        elif self.maxofvaloresampliados<self.dmax:
+            self.exc -= 1
+            self.readdata()
+            return
+        # end excess
+        self.tablasimple()
         return self.valoresampliados
                 # if not max(newampliado)==dmax:
                     # for x in range(exceso):
