@@ -179,6 +179,7 @@ class estadistica(object):
         print 'Frecuencia Simple - Simple frequency\n{}\n'.format(self.tfsimple)
         print '(Dato Minimo - Max value) : {}\n(Dato Maximo - Min Value) : {}\n(Viejo Rango - Old range) : {}\n(Rango - Range) : {}\n(Tamano de Clase- Size of class) : {}\n(Vieja Amplitud - Old amplitude) : {}\n(Amplitud - Amplitude) : {}\n(Viejo Exceso - Old excess) : {}\n(Exceso - Excess) : {}\n(Tamano Muestra - Sample size) : {}\n(Marca de clase - Mark of class) : {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.viejoexceso, self.exceso, self.n, self.marca_clase)
         print 'El orden es: intervalos, frecuencia absoluta, frecuencia absoluta acomulada, frecuencia realtiva, marca de clase'
+        print 'Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative frequency, mark of class'
         print '________________________________________________________________________'
         self.absolutf = 0
         for number, v in enumerate(self.tabla):
@@ -187,6 +188,7 @@ class estadistica(object):
                 self.relativefrequency = float('{:.2f}'.format((float(value)/self.n)*100))
                 print '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(key,value, self.absolutf, self.relativefrequency, self.marca_clase[number])
         print '_________________________________________________________________________'
+        print 'Intervals, fi ,  Fi , fr , xi '
 it = estadistica()
 it.printme()
 
