@@ -33,18 +33,17 @@ class estadistica(object):
     antibucle = True
     antibucle2 = True
     never = True
+    relativefrequency = 0
     def __init__(self):
         self.readdata()
 
     def readdata(self):
         # Paste your number in the next variable
         self.data = """
-33.1    33.9    34.2    34.5    34.7    35.2
-33.4    34.0    34.2    34.5    34.8    35.6
-33.6    34.1    34.3    34.6    34.9    35.8
-33.7    34.2    34.3    34.6    35.1    36.0
-33.4    34.2    34.3    34.6    35.1    36.1
-33.8    34.2    34.3    34.7    35.2    36.5"""
+
+
+52       57       61    64    67    69    74    77    82    88
+55       61    63    65    68    72    74    79    84    93"""
 
         self.data = re.sub(r'([0-9]+[.]{0,1}[0-9]{0,})[\s\t\n]+', r'\g<1>,', self.data)
         self.data = self.data.split(',')
@@ -56,6 +55,14 @@ class estadistica(object):
         except:
             self.data = map(float, [x for x in self.data if not x==''])
             self.id=1
+        # Generate simple frecuency table
+        self.new = []
+        for x in self.data:
+            self.new.append({x:self.data.count(x)})
+        self.tfsimple = []
+        [self.tfsimple.append(x) for x in self.new if not x in self.tfsimple]
+        self.tfsimple.sort()
+        # end table
         self.data.sort()
         self.dmin = min(self.data)
         self.dmax = max(self.data)
@@ -80,9 +87,8 @@ class estadistica(object):
             # arreglar despues
             self.viejoamplitud = (self.viejorango/self.clase)
             self.viejoexceso = self.viejorango-(self.viejoamplitud*self.clase)
-            self.exc = self.exceso
+            self.exc += 1
             self.exceso = None
-            self.flag = False
             self.readdata()
             return
 
@@ -98,26 +104,31 @@ class estadistica(object):
         for x in range(self.clase):
             self.ampliado += self.amplitud
             self.valoresampliados.append(self.ampliado)
-        #the next code is for recreate excess
+        # the next code is for recreate excess
         if isinstance(max(self.valoresampliados), float):
             self.maxofvaloresampliados = '%.1f' % round(max(self.valoresampliados), 1)
             self.maxofvaloresampliados = float(self.maxofvaloresampliados)
         else:
             self.maxofvaloresampliados = max(self.valoresampliados)
-        if self.maxofvaloresampliados>self.dmax:
-            if self.antibucle or self.antibucle2:
-                self.exc -= 1
-                self.antibucle = False
-                self.flag = False
-                self.readdata()
-                return
-        elif self.maxofvaloresampliados<self.dmax:
-            if self.antibucle or self.antibucle2:
-                self.exc += 1
-                self.antibucle2 = False
-                self.flag = False
-                self.readdata()
-                return
+        # if self.maxofvaloresampliados>self.dmax:
+            # if self.antibucle or self.antibucle2:
+                # self.exc -= 1
+                # self.antibucle = False
+                # self.flag = False
+                # self.readdata()
+                # return
+        # elif self.maxofvaloresampliados<self.dmax:
+            # if self.antibucle or self.antibucle2:
+                # self.exc += 1
+                # self.antibucle2 = False
+                # self.flag = False
+                # self.readdata()
+                # return
+        # self.destroy = True
+        # if not self.antibucle and not self.antibucle2 and self.destroy:
+            # self.exc += self.exceso
+            # self.destroy = False
+            # self.readdata()
         # end cycle
         self.tablasimple()
         return self.valoresampliados
@@ -128,6 +139,7 @@ class estadistica(object):
     def tablasimple(self):
         newampliado = self.valoresampliados
         self.primeraentrada = True
+        self.valuesoftablescomplete = []
         for a in range(self.clase):
             if a+1>self.clase:
                 break
@@ -138,21 +150,29 @@ class estadistica(object):
             elif a==self.clase:
                 valuesoftable = filter(lambda x: x if newampliado[a]<x<=newampliado[a+1] else False, self.data)
             else:
-                valuesoftable = filter(lambda x: x if newampliado[a]<=x<=newampliado[a+1] else False, self.data)
+                valuesoftable = filter(lambda x: x if newampliado[a]<=x<newampliado[a+1] else False, self.data)
             # end if
             self.tabla_withvalues.append({"{}, {}".format(newampliado[a], newampliado[a+1]): valuesoftable}) # firt number of range is < that x and x < that the next
             self.tabla.append({"{}, {}".format(newampliado[a], newampliado[a+1]): len(valuesoftable)}) # firt number of range is < that x and x < that the next
+            self.valuesoftablescomplete.append(len(valuesoftable))
             if valuesoftable:
                 self.marca_clase.append((newampliado[a]+newampliado[a+1])/2)
             else: # if not found values between of interval class
                 self.marca_clase.append(0)
     #print newampliado , 'newampliado'
     def printme(self):
-        print self.data, '\n'
+        print 'Datos ordenados\n{}\n'.format(self.data)
+        print 'Frecuencia Simple\n{}\n'.format(self.tfsimple)
         print 'Dato Minimo: {} \nDato Maximo: {}\nViejo Rango: {}\nRango: {}\nTamano de Clase: {}\nVieja Amplitud: {}\nAmplitud: {}\nViejo Exceso: {}\nExceso: {}\nTamano Muestra: {}\nMarca de clase: {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.viejoexceso, self.exceso, self.n, self.marca_clase)
-        for v in self.tabla:
-            print v
-
+        print 'El orden es: intervalos, frecuencia absoluta, frecuencia absoluta acomulada, frecuencia realtiva, marca de clase'
+        print '________________________________________________________________________'
+        self.absolutf = 0
+        for number, v in enumerate(self.tabla):
+            for key,value in v.iteritems():
+                self.absolutf += value
+                self.relativefrequency = float('{:.2f}'.format((float(value)/self.n)*100))
+                print '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(key,value, self.absolutf, self.relativefrequency, self.marca_clase[number])
+        print '_________________________________________________________________________'
 it = estadistica()
 it.printme()
 
