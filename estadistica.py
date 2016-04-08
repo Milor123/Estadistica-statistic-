@@ -39,13 +39,12 @@ class estadistica(object):
     def readdata(self):
         # Paste your number in the next variable
         self.data = """
-
-0    4    8    10    12     13    15    16    17    19    20    24
-0    4    8    10    12     13    15    16    18    19    21    28
-1    5    8    10    12     13    16    16    18    19    21    29
-2    6    9    10    12     14    16    16    18    20    21    29
-2    7    9    11    13     14    16    17    18    20    21    32
-4    8   10   11    13     14    16    17    18    20    22    33"""
+33.1    33.9    34.2    34.5    34.7    35.2
+33.4    34.0    34.2    34.5    34.8    35.6
+33.6    34.1    34.3    34.6    34.9    35.8
+33.7    34.2    34.3    34.6    35.1    36.0
+33.4    34.2    34.3    34.6    35.1    36.1
+33.8    34.2    34.3    34.7    35.2    36.5"""
 
         self.data = re.sub(r'([0-9]+[.]{0,1}[0-9]{0,})[\s\t\n]+', r'\g<1>,', self.data)
         self.data = self.data.split(',')
@@ -135,10 +134,11 @@ class estadistica(object):
             # for capture values in ranges
             if self.primeraentrada:
                 valuesoftable = filter(lambda x: x if newampliado[a]<=x<newampliado[a+1] else False, self.data)
+                self.primeraentrada = False
             elif a==self.clase:
                 valuesoftable = filter(lambda x: x if newampliado[a]<x<=newampliado[a+1] else False, self.data)
             else:
-                valuesoftable = filter(lambda x: x if newampliado[a]<x<newampliado[a+1] else False, self.data)
+                valuesoftable = filter(lambda x: x if newampliado[a]<=x<=newampliado[a+1] else False, self.data)
             # end if
             self.tabla_withvalues.append({"{}, {}".format(newampliado[a], newampliado[a+1]): valuesoftable}) # firt number of range is < that x and x < that the next
             self.tabla.append({"{}, {}".format(newampliado[a], newampliado[a+1]): len(valuesoftable)}) # firt number of range is < that x and x < that the next
