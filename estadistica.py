@@ -41,9 +41,16 @@ class estadistica(object):
         # Paste your number in the next variable
         self.data = """
 
+0   4    8    10    12     13    15    16    17    19    20    24
+0    4    8    10    12     13    15    16    18    19    21    28
+1    5    8    10    12     13    16    16    18    19    21    29
+2    6    9    10    12     14    16    16    18    20    21    29
+2    7    9    11    13     14    16    17    18    20    21    32
+4    8   10   11    13     14    16    17    18    20    22    33
 
-52       57       61    64    67    69    74    77    82    88
-55       61    63    65    68    72    74    79    84    93"""
+
+
+"""
 
         self.data = re.sub(r'([0-9]+[.]{0,1}[0-9]{0,})[\s\t\n]+', r'\g<1>,', self.data)
         self.data = self.data.split(',')
@@ -145,13 +152,20 @@ class estadistica(object):
                 break
             # for capture values in ranges
             if self.primeraentrada:
-                valuesoftable = filter(lambda x: x if newampliado[a]<=x<newampliado[a+1] else False, self.data)
+                # old code example valuesoftable = filter(lambda x: x if newampliado[a]<=x<newampliado[a+1] else None, self.data)
+                valuesoftable = [x for x in self.data if newampliado[a]<=x<newampliado[a+1]]
                 self.primeraentrada = False
             elif a==self.clase:
-                valuesoftable = filter(lambda x: x if newampliado[a]<x<=newampliado[a+1] else False, self.data)
+                valuesoftable = [x for x in self.data if newampliado[a]<=x<=newampliado[a+1]]
             else:
-                valuesoftable = filter(lambda x: x if newampliado[a]<=x<newampliado[a+1] else False, self.data)
+                valuesoftable = [x for x in self.data if newampliado[a]<=x<newampliado[a+1]]
             # end if
+            # convert to float or int if exist str in list
+            if self.id == 1: # float
+                valuesoftable = map(float, valuesoftable)
+            else: # int
+                valuesoftable = map(int, valuesoftable)
+
             self.tabla_withvalues.append({"{}, {}".format(newampliado[a], newampliado[a+1]): valuesoftable}) # firt number of range is < that x and x < that the next
             self.tabla.append({"{}, {}".format(newampliado[a], newampliado[a+1]): len(valuesoftable)}) # firt number of range is < that x and x < that the next
             self.valuesoftablescomplete.append(len(valuesoftable))
