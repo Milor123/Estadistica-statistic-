@@ -175,9 +175,9 @@ class estadistica(object):
                 self.marca_clase.append(0)
     #print newampliado , 'newampliado'
     def printme(self):
-        print 'Datos ordenados\n{}\n'.format(self.data)
-        print 'Frecuencia Simple\n{}\n'.format(self.tfsimple)
-        print 'Dato Minimo: {} \nDato Maximo: {}\nViejo Rango: {}\nRango: {}\nTamano de Clase: {}\nVieja Amplitud: {}\nAmplitud: {}\nViejo Exceso: {}\nExceso: {}\nTamano Muestra: {}\nMarca de clase: {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.viejoexceso, self.exceso, self.n, self.marca_clase)
+        print 'Datos ordenados - Organized information\n{}\n'.format(self.data)
+        print 'Frecuencia Simple - Simple frequency\n{}\n'.format(self.tfsimple)
+        print '(Dato Minimo - Max value) : {}\n(Dato Maximo - Min Value) : {}\n(Viejo Rango - Old range) : {}\n(Rango - Range) : {}\n(Tamano de Clase- Size of class) : {}\n(Vieja Amplitud - Old amplitude) : {}\n(Amplitud - Amplitude) : {}\n(Viejo Exceso - Old excess) : {}\n(Exceso - Excess) : {}\n(Tamano Muestra - Sample size) : {}\n(Marca de clase - Mark of class) : {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.viejoexceso, self.exceso, self.n, self.marca_clase)
         print 'El orden es: intervalos, frecuencia absoluta, frecuencia absoluta acomulada, frecuencia realtiva, marca de clase'
         print '________________________________________________________________________'
         self.absolutf = 0
