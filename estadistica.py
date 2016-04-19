@@ -40,14 +40,11 @@ class estadistica(object):
     def readdata(self):
         # Paste your number in the next variable
         self.data = """
-
-0   4    8    10    12     13    15    16    17    19    20    24
-0    4    8    10    12     13    15    16    18    19    21    28
-1    5    8    10    12     13    16    16    18    19    21    29
-2    6    9    10    12     14    16    16    18    20    21    29
-2    7    9    11    13     14    16    17    18    20    21    32
-4    8   10   11    13     14    16    17    18    20    22    33
-
+60 66 77 70 66 68 57 70 66 52 75 65 69 71 58 66 67 74 61
+63 69 80 59 66 70 67 78 75 64 71 81 62 64 69 68 72 83 56
+65 74 67 54 65 65 69 61 67 73 57 62 67 68 63 67 71 68 76
+61 62 63 76 61 67 67 64 72 64 73 79 58 67 71 68 59 69 70
+66 62 63 66
 
 
 """
@@ -180,16 +177,65 @@ class estadistica(object):
         print '(Dato Minimo - Max value) : {}\n(Dato Maximo - Min Value) : {}\n(Viejo Rango - Old range) : {}\n(Rango - Range) : {}\n(Tamano de Clase- Size of class) : {}\n(Vieja Amplitud - Old amplitude) : {}\n(Amplitud - Amplitude) : {}\n(Viejo Exceso - Old excess) : {}\n(Exceso - Excess) : {}\n(Tamano Muestra - Sample size) : {}\n(Marca de clase - Mark of class) : {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.viejoexceso, self.exceso, self.n, self.marca_clase)
         print 'El orden es: intervalos, frecuencia absoluta, frecuencia absoluta acomulada, frecuencia realtiva, marca de clase'
         print 'Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative frequency, mark of class'
-        print '________________________________________________________________________'
+        # off manual tableprint '________________________________________________________________________'
         self.absolutf = 0
+        self.dabsoluteFi = []
+        self.absolute_frecuency = []
+        self.dintervalc = ""
+        self.alltable = []
         for number, v in enumerate(self.tabla):
             for key,value in v.iteritems():
-                self.absolutf += value
+                self.absolutf += value # acumulate
+                self.dabsoluteFi.append(self.absolutf) # Fi or acumulate
+                self.absolute_frecuency.append(value) # fi
+                self.dintervalc += key+'+'
                 self.relativefrequency = float('{:.2f}'.format((float(value)/self.n)*100))
-                print '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(key,value, self.absolutf, self.relativefrequency, self.marca_clase[number])
-        print '_________________________________________________________________________'
-        print 'Intervals, fi ,  Fi , fr , xi '
+                self.alltable.append((key,value, self.absolutf, str(self.relativefrequency)+' %', self.marca_clase[number]))
+                # off manual tableprint '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(key,value, self.absolutf, self.relativefrequency, self.marca_clase[number])
+        # off manual tableprint '_________________________________________________________________________'
+        # off manual tableprint 'Intervals, fi ,  Fi , fr , xi '
+        self.intervalos_label = self.dintervalc[:-1].strip(' ').split('+')
+        self.show_newtable()
+    def graphic_fi_bar(self):
+        import numpy as np
+        import matplotlib.pyplot as plt
+        pos = np.arange(len(self.absolute_frecuency))
+        # figure with bars
+        width = 1.0     # gives histogram aspect to the bar diagram
+        fig1= plt.figure()
+        ax1 = plt.axes()
+        ax1.set_ylabel('Frecuencia - Frequency')
+        ax1.set_xlabel('Intervalos - Intervals')
+        ax1.set_title('Diagrama de Frecuencia Absoluta - Absolute frequency diagram')
+        ax1.set_xticks(pos + (width / 2))
+        ax1.set_xticklabels(self.intervalos_label)
+        plt.bar(pos, self.absolute_frecuency, width, color='r')
+
+
+        # figure with lines
+        fig2 = plt.figure()
+        pos = np.arange(len(self.absolute_frecuency))
+        x = np.linspace(0, 10)
+        ax = plt.axes()
+        ax.set_ylabel('Frecuencia - Frequency')
+        ax.set_xlabel('Intervalos - Intervals')
+        ax.set_title('Diagrama de Frecuencia Absoluta - Absolute frequency diagram')
+        ax.set_xticklabels(self.intervalos_label)
+        plt.plot(pos, self.absolute_frecuency, '-', linewidth=2)
+
+
+        plt.show()
+    def graphic_fi_line(self):
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+    def show_newtable(self):
+        from astropy.table import Table, Column
+        values=('Intervals', 'fi' ,  'Fi' , 'fr' , 'xi')
+        t = Table(rows=self.alltable, names=values)
+        print '\n'
+        print t
+
 it = estadistica()
 it.printme()
-
-
+it.graphic_fi_bar()
