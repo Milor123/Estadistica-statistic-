@@ -171,13 +171,14 @@ class estadistica(object):
             else: # if not found values between of interval class
                 self.marca_clase.append(0)
     #print newampliado , 'newampliado'
-    def printme(self):
+    def printme(self, astropy=0):
         print 'Datos ordenados - Organized information\n{}\n'.format(self.data)
         print 'Frecuencia Simple - Simple frequency\n{}\n'.format(self.tfsimple)
         print '(Dato Minimo - Max value) : {}\n(Dato Maximo - Min Value) : {}\n(Viejo Rango - Old range) : {}\n(Rango - Range) : {}\n(Tamano de Clase- Size of class) : {}\n(Vieja Amplitud - Old amplitude) : {}\n(Amplitud - Amplitude) : {}\n(Viejo Exceso - Old excess) : {}\n(Exceso - Excess) : {}\n(Tamano Muestra - Sample size) : {}\n(Marca de clase - Mark of class) : {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.viejoexceso, self.exceso, self.n, self.marca_clase)
         print 'El orden es: intervalos, frecuencia absoluta, frecuencia absoluta acomulada, frecuencia realtiva, marca de clase'
         print 'Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative frequency, mark of class'
-        # off manual tableprint '________________________________________________________________________'
+        if not astropy:
+            print '________________________________________________________________________'
         self.absolutf = 0
         self.dabsoluteFi = []
         self.absolute_frecuency = []
@@ -191,12 +192,15 @@ class estadistica(object):
                 self.dintervalc += key+'+'
                 self.relativefrequency = float('{:.2f}'.format((float(value)/self.n)*100))
                 self.alltable.append((key,value, self.absolutf, str(self.relativefrequency)+' %', self.marca_clase[number]))
-                # off manual tableprint '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(key,value, self.absolutf, self.relativefrequency, self.marca_clase[number])
-        # off manual tableprint '_________________________________________________________________________'
-        # off manual tableprint 'Intervals, fi ,  Fi , fr , xi '
+                if not astropy:
+                    print '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(key,value, self.absolutf, self.relativefrequency, self.marca_clase[number])
+        if not astropy:
+            print '_________________________________________________________________________'
+            print 'Intervals, fi ,  Fi , fr , xi '
         self.intervalos_label = self.dintervalc[:-1].strip(' ').split('+')
-        self.show_newtable()
-    def graphic_fi_bar(self):
+        if astropy:
+            self.show_newtable()
+    def graphic_histrogram(self):
         import numpy as np
         import matplotlib.pyplot as plt
         pos = np.arange(len(self.absolute_frecuency))
@@ -237,5 +241,5 @@ class estadistica(object):
         print t
 
 it = estadistica()
-it.printme()
-it.graphic_fi_bar()
+it.printme(0) # 0 non use astropy library, 1 Enable astropy
+it.graphic_histrogram()
