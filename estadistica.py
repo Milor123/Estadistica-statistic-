@@ -44,7 +44,7 @@ class estadistica(object):
 63 69 80 59 66 70 67 78 75 64 71 81 62 64 69 68 72 83 56
 65 74 67 54 65 65 69 61 67 73 57 62 67 68 63 67 71 68 76
 61 62 63 76 61 67 67 64 72 64 73 79 58 67 71 68 59 69 70
-66 62 63 66.0
+66 62 63 66
 """
 
         self.data = re.sub(r'([0-9]+[.]{0,1}[0-9]{0,})[\s\t\n]+', r'\g<1>,', self.data)
@@ -182,6 +182,8 @@ class estadistica(object):
         self.absolute_frecuency = []
         self.dintervalc = ""
         self.alltable = []
+        tmpkey2f = None
+        self.frecuencia_relativa = []
         for number, v in enumerate(self.tabla):
             for key,value in v.iteritems():
                 self.absolutf += value # acumulate
@@ -200,9 +202,16 @@ class estadistica(object):
 
                     self.dintervalc += tmpkey+'+'
                 self.relativefrequency = float('{:.2f}'.format((float(value)/self.n)*100))
-                self.alltable.append((tmpkey2f,value, self.absolutf, str(self.relativefrequency)+' %', self.marca_clase[number]))
+                self.frecuencia_relativa.append(self.relativefrequency)
+                if self.id:
+                    self.alltable.append((tmpkey2f,value, self.absolutf, str(self.relativefrequency)+' %', self.marca_clase[number]))
+                else:
+                    self.alltable.append((key,value, self.absolutf, str(self.relativefrequency)+' %', self.marca_clase[number]))
                 if not astropy:
-                    print '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(tmpkey2f, value, self.absolutf, self.relativefrequency, self.marca_clase[number])
+                    if self.id:
+                        print '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(tmpkey2f, value, self.absolutf, self.relativefrequency, self.marca_clase[number])
+                    else:
+                        print '|  {}  |  {}  |  {}  |  {} %  |  {}  |'.format(key, value, self.absolutf, self.relativefrequency, self.marca_clase[number])
         if not astropy:
             print '_________________________________________________________________________'
             print 'Intervals, fi ,  Fi , fr , xi '
@@ -211,14 +220,26 @@ class estadistica(object):
             self.show_newtable()
 
     def graphic_histrogram(self):
+        from matplotlib import rc as mrc # for update font
         import matplotlib.pyplot as plt
+        import matplotlib.gridspec as gridspec
+
+        font = {'family' : 'normal',
+                'weight' : 'normal',
+                'size'   : 9}
+
+        mrc('font', **font) # change font
+        # explaint of plt.subplot(000) 000 correspont to 3 number, the
+        # the firts is size of figures, the second is max of figure columns, and
+        # the ultimate is the number of figure
+
         pos = range(len(self.absolute_frecuency))
         # figure with bars fi
         width = 1.0     # gives histogram aspect to the bar diagram
-        fig1= plt.figure()
-        ax1 = plt.axes()
+        plt.figure(figsize=(16,10))
+        ax1 = plt.subplot(231)
         ax1.set_ylabel('Frecuencia - Frequency')
-        ax1.set_xlabel('Intervalos - Intervals')
+        #ax1.set_xlabel('Intervalos - Intervals')
         ax1.set_title('Diagrama de Frecuencia Absoluta \n Absolute frequency diagram')
         # ax1.set_xticks(pos + (width / 2)) this work with numpy
         ax1.set_xticklabels(self.intervalos_label)
@@ -226,14 +247,11 @@ class estadistica(object):
         for i,j in zip(pos,self.absolute_frecuency):
             ax1.annotate(str(j),xy=(i,j+0)) # this show numbers in the graphic, +1 is for up number, also can +2 +3 +4 blabla
 
-
-
         # figure with lines fi
-        fig2 = plt.figure()
         pos = range(len(self.absolute_frecuency))
-        ax = plt.axes()
+        ax = plt.subplot(232)
         ax.set_ylabel('Frecuencia - Frequency')
-        ax.set_xlabel('Intervalos - Intervals')
+        #ax.set_xlabel('Intervalos - Intervals')
         ax.set_title('Diagrama de Frecuencia Absoluta \nAbsolute frequency diagram')
         ax.set_xticklabels(self.intervalos_label)
         for i,j in zip(pos,self.absolute_frecuency):
@@ -241,9 +259,8 @@ class estadistica(object):
         ax.plot(pos, self.absolute_frecuency, '-', linewidth=2)
 
         # figure with lines Fi (A)
-        fig3 = plt.figure()
         pos = range(len(self.absolute_frecuency))
-        ax3 = plt.axes()
+        ax3 = plt.subplot(233)
         ax3.set_ylabel('Frecuencia - Frequency')
         ax3.set_xlabel('Intervalos - Intervals')
         ax3.set_title('Diagrama de Frecuencia Absoluta Acomulada Ascendente \nAbsolute frequency diagram Cumulative Ascending')
@@ -253,10 +270,9 @@ class estadistica(object):
             ax3.annotate(str(j),xy=(i,j+0)) # this show numbers in the graphic, +1 is for up number, also can +2 +3 +4 blabla
 
         # figure with lines Fi (D)
-        fig4 = plt.figure()
         FI = sorted(self.frecuencia_absoluta_acumulada, reverse=True)
         pos = range(len(FI))
-        ax4 = plt.axes()
+        ax4 = plt.subplot(234)
         ax4.set_ylabel('Frecuencia - Frequency')
         ax4.set_xlabel('Intervalos - Intervals')
         ax4.set_title('Diagrama de Frecuencia Absoluta Acomulada Descendente \n Absolute frequency diagram Cumulative Descending')
@@ -266,9 +282,8 @@ class estadistica(object):
             ax4.annotate(str(j),xy=(i,j+0)) # this show numbers in the graphic, +1 is for up number, also can +2 +3 +4 blabla
 
         # figure with lines FI (A and D)
-        fig5 = plt.figure()
         pos = range(len(FI))
-        ax5 = plt.axes()
+        ax5 = plt.subplot(235)
         ax5.set_ylabel('Frecuencia - Frequency')
         ax5.set_xlabel('Intervalos - Intervals')
         ax5.set_title('Diagrama de Frecuencia Absoluta Acomulada Asendente y Descendente \n Absolute frequency diagram Cumulative Ascending and Descending')
@@ -281,8 +296,19 @@ class estadistica(object):
         for i,j in zip(pos, self.frecuencia_absoluta_acumulada):
             ax5.annotate(str(j),xy=(i,j+0)) # this show numbers in the graphic, +1 is for up number, also can +2 +3 +4 blabla
 
+        #Figure circle
+        labels = []
+        ax6 = plt.subplot(236)
+        for x,y in zip(self.intervalos_label, self.frecuencia_relativa):
+            labels.append(x+' ('+str(y)+'%)')
+        sizes = self.frecuencia_relativa
+        colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
+        patches, texts = plt.pie(sizes, colors=colors, startangle=90)
+        plt.legend(patches, labels, loc="best")
+        # Set aspect ratio to be equal so that pie is drawn as a circle.
+        plt.axis('equal')
+        plt.tight_layout()
         plt.show()
-
     def show_newtable(self):
         from astropy.table import Table, Column
         values=('Intervals', 'fi' ,  'Fi' , 'fr' , 'xi')
@@ -291,5 +317,5 @@ class estadistica(object):
         print t
 
 it = estadistica()
-it.printme(1) # 0 non use astropy library, 1 Enable astropy
+it.printme(0) # 0 non use astropy library, 1 Enable astropy
 it.graphic_histrogram()
