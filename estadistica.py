@@ -302,7 +302,7 @@ class estadistica(object):
         for x,y in zip(self.intervalos_label, self.frecuencia_relativa):
             labels.append(x+' ('+str(y)+'%)')
         sizes = self.frecuencia_relativa
-        colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
+        colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral', 'blue', 'red', 'orange','green','pink']
         patches, texts = plt.pie(sizes, colors=colors, startangle=90)
         plt.legend(patches, labels, loc="best")
         # Set aspect ratio to be equal so that pie is drawn as a circle.
