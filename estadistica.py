@@ -173,7 +173,7 @@ class estadistica(object):
         print 'Datos ordenados - Organized information\n{}\n'.format(self.data)
         print 'Frecuencia Simple - Simple frequency\n{}\n'.format(self.tfsimple)
         print '(Dato Minimo - Max value) : {}\n(Dato Maximo - Min Value) : {}\n(Viejo Rango - Old range) : {}\n(Rango - Range) : {}\n(Tamano de Clase- Size of class) : {}\n(Vieja Amplitud - Old amplitude) : {}\n(Amplitud - Amplitude) : {}\n(Viejo Exceso - Old excess) : {}\n(Exceso - Excess) : {}\n(Tamano Muestra - Sample size) : {}\n(Marca de clase - Mark of class) : {}\n'.format(self.dmin, self.dmax, self.viejorango, self.rango, self.clase, self.viejoamplitud, self.amplitud, self.viejoexceso, self.exceso, self.n, self.marca_clase)
-        print 'El orden es: intervalos, frecuencia absoluta, frecuencia absoluta acomulada, frecuencia realtiva, marca de clase'
+        print 'El orden es: intervalos, frecuencia absoluta, frecuencia absoluta acumulada, frecuencia relativa, marca de clase'
         print 'Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative frequency, mark of class'
         if not astropy:
             print '________________________________________________________________________'
@@ -222,7 +222,6 @@ class estadistica(object):
     def graphic_histrogram(self):
         from matplotlib import rc as mrc # for update font
         import matplotlib.pyplot as plt
-        import matplotlib.gridspec as gridspec
 
         font = {'family' : 'normal',
                 'weight' : 'normal',
@@ -235,12 +234,12 @@ class estadistica(object):
 
         pos = range(len(self.absolute_frecuency))
         # figure with bars fi
-        width = 1.0     # gives histogram aspect to the bar diagram
+        width = 1.0  # gives histogram aspect to the bar diagram
         plt.figure(figsize=(16,10))
         ax1 = plt.subplot(231)
         ax1.set_ylabel('Frecuencia - Frequency')
         #ax1.set_xlabel('Intervalos - Intervals')
-        ax1.set_title('Diagrama de Frecuencia Absoluta \n Absolute frequency diagram')
+        ax1.set_title('Histograma - Histogram')
         # ax1.set_xticks(pos + (width / 2)) this work with numpy
         ax1.set_xticklabels(self.intervalos_label)
         ax1.bar(pos, self.absolute_frecuency, width, color='r')
@@ -252,10 +251,11 @@ class estadistica(object):
         ax = plt.subplot(232)
         ax.set_ylabel('Frecuencia - Frequency')
         #ax.set_xlabel('Intervalos - Intervals')
-        ax.set_title('Diagrama de Frecuencia Absoluta \nAbsolute frequency diagram')
+        ax.set_title('Frequency polygo - Poligono de Frecuencia')
         ax.set_xticklabels(self.intervalos_label)
+        marca_clase = iter(self.marca_clase)
         for i,j in zip(pos,self.absolute_frecuency):
-            ax.annotate(str(j),xy=(i,j+0)) # this show numbers in the graphic, +1 is for up number, also can +2 +3 +4 blabla
+            ax.annotate(str(marca_clase.next()),xy=(i,j+0)) # this show numbers in the graphic, +1 is for up number, also can +2 +3 +4 blabla
         ax.plot(pos, self.absolute_frecuency, '-', linewidth=2)
 
         # figure with lines Fi (A)
@@ -263,7 +263,7 @@ class estadistica(object):
         ax3 = plt.subplot(233)
         ax3.set_ylabel('Frecuencia - Frequency')
         ax3.set_xlabel('Intervalos - Intervals')
-        ax3.set_title('Diagrama de Frecuencia Absoluta Acomulada Ascendente \nAbsolute frequency diagram Cumulative Ascending')
+        ax3.set_title('Ojiva Ascendente - Ascending Ogive')
         ax3.set_xticklabels(self.intervalos_label)
         ax3.plot(pos, self.frecuencia_absoluta_acumulada, '-', linewidth=2)
         for i,j in zip(pos,self.frecuencia_absoluta_acumulada):
@@ -275,7 +275,7 @@ class estadistica(object):
         ax4 = plt.subplot(234)
         ax4.set_ylabel('Frecuencia - Frequency')
         ax4.set_xlabel('Intervalos - Intervals')
-        ax4.set_title('Diagrama de Frecuencia Absoluta Acomulada Descendente \n Absolute frequency diagram Cumulative Descending')
+        ax4.set_title('Ojiva Descendente - Descending Ogive')
         ax4.set_xticklabels(self.intervalos_label)
         plt.plot(pos, FI, '-', linewidth=2)
         for i,j in zip(pos, FI):
@@ -286,7 +286,7 @@ class estadistica(object):
         ax5 = plt.subplot(235)
         ax5.set_ylabel('Frecuencia - Frequency')
         ax5.set_xlabel('Intervalos - Intervals')
-        ax5.set_title('Diagrama de Frecuencia Absoluta Acomulada Asendente y Descendente \n Absolute frequency diagram Cumulative Ascending and Descending')
+        ax5.set_title('Ojiva Asendente y Descendente - Ogive Ascending and Descending')
         ax5.set_xticklabels(self.intervalos_label)
         plt.plot(pos, self.frecuencia_absoluta_acumulada, '-', linewidth=2)
         plt.plot(pos, FI, '-', linewidth=2)
