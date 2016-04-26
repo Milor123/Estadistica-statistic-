@@ -1,4 +1,6 @@
-#Descriptive statistics
+# Estadistica Descriptiva
+
+<div id='Description'/>
 
 <div id='Description'/>
 <a href="https://github.com/Milor123/Estadistica-statistic-/blob/master/README%28es%29.md">
@@ -6,98 +8,98 @@
 <a href="https://github.com/Milor123/Estadistica-statistic-/blob/master/README.md">
 <img align="right" src ="https://cdn1.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_United_Kingdom_-_Circle-128.png" width="50" height="50"/></a>
 
-
-### Description
+### Descripcion
 -----------------------------
 
-This algorithm allows you to do calculations in `statistic descriptive` in one way very easy, because you only need paste the data and run the script
+Este algoritmo permite hacer cálculos en `descriptive estadística` de una manera muy fácil, ya que sólo necesita pegar los datos y ejecutar el script
 
-**What can calculate?:**
+**¿Que puede calcular?:**
 
-| Information  | Tables with  | Figures  | Examples |
-| -------------|:-----------:|:-----------:| --------:|
-| Min value | Absolute Frecuency | Histogram | [See Figures](#Figures)|
-| Max value | Mark of class | Frequency polygon|   [Results - Resultados](#Results-Step) |
-| Old range (Range) | Relative Frecuency |Ascending Ogive
-| Range (New Range) | Cumulative Absolute Frequency |Descending Ogive|
-| Size of interval class | | Ogive Ascending and Descending 
-| Old amplitude (Amplitude) | | Circle Dragram
-| Amplitude (New Amplitude)
-| Old excess (Excess)
-| Excess (New Excess)
-| Maximun sample size
-| Mark of class
-| Simple frequency
+| Informacion | Tablas con  | Figuras  | Ejemplos |
+| ------------- |:------------------------:|-----------------| -----:|
+| Dato minimo   | Frecuencia Absoluta|Histograma   | [Ver Figuras](#Figures)|
+| Dato maximo   | Marca de clase |Poligono de Frecuencia     |   [Resultados](#Results-Step) |
+| Viejo rango (Rango)     |  Frecuencia Relativa |Ojiva Ascendente 
+| Rango (Nuevo Rango)     | Frecuencia Absoluta Acumulada |Ojiva Descendente
+| Intervalo de clase    | | Ojiva Asendente y Descendente 
+| Vieja amplitud (Amplitud) | |  Diagrama Circular
+| Amplitud (Nueva Amplitud)
+| Viejo exceso (Exceso)
+| Exceso (Nuevo Exceso)
+| Tamaño de muestra
+| Marca de clase
+| Frecuencia Simple
 
 <br/>
 <div id='Table'/>
-## Table of Contents
-1.  [Description](#Description)
-2.  [Table of contens](#Table)
-3.  [Requeriments](#Requeriments)
-    1.  [Basic requeriments](#BRequeriments)
-    2.  [How install pip](#Pipinstall)
-4.  [How use](#Howuse)
-    1.  [First step](#First-Step)
-    2.  [Example](#Example)
-    3.  [Optional step](#Optional-Step)
-    4.  [Results](#Results-Step)
-5. [Copyright and license](#License)
+## Tabla de contenido
+1.  [Descripcion](#Description)
+2.  [Tabla de contenido](#Table)
+3.  [Requerimientos](#Requeriments)
+    1.  [Requerimientos basicos](#BRequeriments)
+    2.  [Como instalar pip](#Pipinstall)
+4.  [Como usar](#Howuse)
+    1.  [Primer paso](#First-Step)
+    2.  [Ejemplo](#Example)
+    3.  [Paso opcional](#Optional-Step)
+    4.  [Resultados](#Results-Step)
+5. [Copyright y licencia](#License)
 
 <br/>
 <div id='Requeriments'/>
-### Requeriments
+### Requerimientos
 ---------------------------------
 
-You must have a version of python as indicated below or greater, but `but this does not support python 3x`
+Debes tener una version de python como la que se indica a continuacion o mayor, `pero no soporta python 3x`
 
 <div id='BRequeriments'/>
 
 *   **python 2.7x**
-    *   Windows : [Download](https://www.python.org/downloads/release/python-279/)
+    *   Windows : [Descargar](https://www.python.org/downloads/release/python-279/)
     *   Debian / Ubuntu: `sudo apt-get install python2.7`
-*   **matplotlib** (_This is included in python2.7+_)
+*   **matplotlib** (_ Esto esta incluido en python2.7+_)
     *   `pip install matplotlib`
     *   Debian / Ubuntu : `sudo apt-get install python-matplotlib`
     *   Fedora / Redhat : `sudo yum install python-matplotlib`
-*   **numpy** (_This is included in matplotlib_)
+*   **numpy** (_Esto esta incluido en matplotlib_)
     *   `pip install numpy`
-*   **astropy** _Optional Instalation_
+*   **astropy** _ Instalacion Opcional_
     *   `pip install --no-deps astropy`
   
 <br/>
 <div id='Pipinstall'/>
-**How install pip?**
+**¿Como instalar pip?**
 * [**Windows**](http://stackoverflow.com/a/12476379/4941927)
-* **Linux or windows**, after python install you must type in cmd or terminal `easy_install pip`
-* [**Installation documentation**](https://pip.pypa.io/en/stable/installing/)
+* **Linux or windows**, Despues de instalar python debes escribir en el cmd or terminal `easy_install pip`
+* [**Documentacion de la instalacion**](https://pip.pypa.io/en/stable/installing/)
 
 <br/>
 <div id='Howuse'/>
-###How use the algorithm?##
+###¿Como usar el algoritmo?##
 ------------------------------------------------------
 
 <div id='First-Step'/>
-**First Step**
+**Primer Paso**
 
-Copy the text of `estadistica.py` in any text editor, in windows for example you could use `notepad`, then paste it and save the file as *any_name.py*, with `.py` extension.
+Copia el text de `estadistica.py` en cualquier editor, en windows por ejemplo podrias usar `notepad`, luego pegalo and guarda el archivo como *cualquier_nombre.py*, con la extension `.py`
 
-Now follows these steps: 
+Ahora sigue estos pasos: 
 
-> You must write the information within `self.data`, if you need exact calculation, you should add a decimal value in any number, example the first number is 60, change it by 60.0 and then the rest will be changed automatically when you run the script
 
-You can add:
+> Debes escribir la información dentro de `con self.data`, si necesitas hacer un cálculo exacto,  añade un valor decimal en cualquier número, ejemplo, el primer número 60, cambiarlo por 60.0 y luego el resto se cambiará automáticamente cuando se ejecutar el script
 
-* numbers
-* spaces
-* jump of lines
-* dot for decimals (decimal numbers)
+Puedes Agregar:
 
-**Warning: Don't Use commas `,`**
+* numeros
+* nespacios
+* saltos de linea
+* puntos para decimales (numeros decimales)
+
+**Advertencia: No uses comas `,`**
 
 <div id='Example'/>
 
-##### Example:
+##### Ejemplo:
 
 ```
 self.data = """
@@ -115,25 +117,26 @@ self.data = """
 """
 ```
 <div id='Optional-Step'/>
-**Optional Step**
+**Paso Opcional**
 
-if you want see a pretty tables:
+Si quieres unas lindas tablas:
 
-sees the penultimate line of code and change `it.printme(0)` by `it.printme(1)`, because 1 enables astropy tables, which are nice, however if you cant install astropy could use 0 by default.
+Ve la penúltima línea de código y el cambio `it.printme (0)` por `it.printme (1)`, ya que 1 habilita tablas astropy, que están muy bonitas, sin embargo, si no puede instalar astropy podría utilizar 0 por defecto.
 
-* [See Astropy Table](#Astropy) 
-* [See Default Table](#Default)
+* [Ver Tablas Astropy](#Astropy) 
+* [Ver Tablas por Defecto](#Default)
 
-**Executing file**
 
-How execute file?:
+**Ejecutando archivo**
 
-*   **Windows**, [see - ver](https://stackoverflow.com/questions/1522564/how-do-i-run-a-python-program)
-*   **Linux**, [see - ver](https://askubuntu.com/questions/244378/run-python-in-terminal)
-*   **Mac osx**, [see - ver](https://stackoverflow.com/questions/21492214/how-to-run-python-script-on-terminal)
+¿Como ejecutar archivo?:
+
+*   **Windows**, [ver](https://stackoverflow.com/questions/1522564/how-do-i-run-a-python-program)
+*   **Linux**, [ver](https://askubuntu.com/questions/244378/run-python-in-terminal)
+*   **Mac osx**, [ver](https://stackoverflow.com/questions/21492214/how-to-run-python-script-on-terminal)
 
 <div id='Results-Step'/>
-##### Information Obtained After Execute:
+##### Informacion Obtenida Despues de Ejecutar:
 
 ```
 Datos ordenados - Organized information
@@ -187,11 +190,12 @@ _________________________________________________________________________
 Intervals, fi ,  Fi , fr , xi 
 ```
 <br/>
-**Figures - Figuras**
+**Figuras**
 <div id='Figures'/>
 <img src="https://goo.gl/8Lbb9u" alt="Figures" width="780" height="580" border="10" />
 
 <div id='License'/>
-## Copyright and license
+## Copyright y licencia
 
-Code copyright 2016-2020 Mateo Bohorquez. Code released under the [MIT license](https://github.com/Milor123/Estadistica-statistic-/blob/master/LICENSE)
+Codigo copyright 2016-2020 Mateo Bohorquez. Codigo liberado bajo la [licencia MIT](https://github.com/Milor123/Estadistica-statistic-/blob/master/LICENSE)
+
