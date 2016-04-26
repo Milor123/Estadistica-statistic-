@@ -4,73 +4,89 @@
 
 ### Description - Descripcion
 
-Algorithm for simple calculus in Descriptive statistics
+This algorithm allows you to do calculations in `statistic descriptive` in one way very easy, because you only need paste the data and run the script
 
-Spanish: Algoritmo para calculos simples en estadistica descriptiva
+Spanish: Este algoritmo permite hacer cálculos en `descriptive estadística` de una manera muy fácil, ya que sólo necesita pegar los datos y ejecutar el script
 
 **What can calculate? - ¿Que puede calcular?:**
 
-* Organized information - Datos ordenados
-* Min value - Dato minimo 
-* Max value - Dato maximo
-* Old range - Viejo rango (# Range Before of recalculate - # Rango antes de recalcularlo)
-* Range - Rango
-* Size of interval class (Sturges Rule) - Tamano de clase (Regla de Sturges)
-* Old amplitude - Vieja amplitud
-* Amplitude - Amplitud
-* Old excess - Viejo exceso
-* Excess - Exceso
-* Maximun sample size - Tamaño de muestra
-* Mark of class - Marca de clase
-* Absolute frequency - Frecuencia Absoluta
-* Simple frequency - Frecuencia Simple
+- [x] Organized information - Datos ordenados
+- [x] Min value - Dato minimo 
+- [x] Max value - Dato maximo
+- [x] Old range - Viejo rango (# Range Before of recalculate - # Rango antes de recalcularlo)
+- [x] Range - Rango
+- [x] Size of interval class (Sturges Rule) - Tamano de clase (Regla de Sturges)
+- [x] Old amplitude - Vieja amplitud
+- [x] Amplitude - Amplitud
+- [x] Old excess - Viejo exceso
+- [x] Excess - Exceso
+- [x] Maximun sample size - Tamaño de muestra
+- [x] Mark of class - Marca de clase
+- [x] Absolute frequency - Frecuencia Absoluta
+- [x] Simple frequency - Frecuencia Simple
 
 **Also generates figures such as - Tambien genera figuras como:**
 
 [See Figures - Ver Figuras](#Figures)
 
-* Bar Diagram - Diagrama de Barras
-   * Absolute Frequency - Frecuencia Absoluta 
-* Line Diagram - Diagrama de lineas
-   * Absolute Frequency - Frecuencia Absoluta 
-   * Cumulative Absolute Frequency Ascending - Frecuencia Absoluta Acumulada Ascendente
-   * Cumulative Absolute Frequency Descending - Frecuencia Absoluta Acumulada Descendente
-   * Double diagram Frequency Cumulative Absolute, Ascending and Descending - Diagrama Doble de Frecuancia Absoluta Acumulada, Ascendente y Descendente
-* Circle Dragram - Diagrama Circular
-   * Relative frequency - Frecuencia Relativa
+- [x] Histogram - Histograma
+- [x] Frequency polygon - Poligono de Frecuencia
+- [x] Ascending Ogive - Ojiva Ascendente
+- [x] Descending Ogive - Ojiva Descendente
+- [x] Ogive Ascending and Descending - Ojiva Asendente y Descendente 
+- [x] Circle Dragram - Diagrama Circular
+   * with Relative frequency - con Frecuencia Relativa
 
-
+<br/>
 <div id='Table'/>
 ## Table of Contents - Tabla de contenido
-* [Description - Descripcion](#Description)
-* [Table of contens - Tabla de contenido](#Table)
-* [Requeriments - Requerimientos](#Requeriments)
-* [How use - Como usar](#Howuse)
-  * [Example - Ejemplo](#Example)
+1.  [Description - Descripcion](#Description)
+2.  [Table of contens - Tabla de contenido](#Table)
+3.  [Requeriments - Requerimientos](#Requeriments)
+    1.  [Basic requeriments - Requerimientos basicos](#BRequeriments)
+    2.  [How install pip - Como instalar pip](#Pipinstall)
+4.  [How use - Como usar](#Howuse)
+    1.  [First step - Primer paso](#First-Step)
+    2.  [Example - Ejemplo](#Example)
+    3.  [Optional step - Paso opcional](#Optional-Step)
+    4.  [Results - Resultados](#Results-Step)
+5. [Copyright and license](#License)
 
+<br/>
 <div id='Requeriments'/>
-
 ### Requeriments - Requerimientos
 
 You must have a version of python as indicated below or greater, but `but this does not support python 3x`
 
 Spanish: Debes tener una version de python como la que se indica a continuacion o mayor, `pero no soporta python 3x`
 
-* `python 2.7x`
-   * Windows : https://www.python.org/downloads/release/python-279/
-   * Debian / Ubuntu: sudo apt-get install python2.7
-* `astropy`, 
-   * pip install --no-deps astropy
-* `mapplotlib` (This is included in python2.7+ - Esto esta incluido en python2.7+)
-   * pip install matplotlib   
-   * Debian / Ubuntu : sudo apt-get install python-matplotlib
-   * Fedora / Redhat : sudo yum install python-matplotlib
+<div id='BRequeriments'/>
 
+*   **python 2.7x**
+    *   Windows : [Download - Descargar](https://www.python.org/downloads/release/python-279/)
+    *   Debian / Ubuntu: `sudo apt-get install python2.7`
+*   **matplotlib** (_This is included in python2.7+ - Esto esta incluido en python2.7+_)
+    *   `pip install matplotlib`
+    *   Debian / Ubuntu : `sudo apt-get install python-matplotlib`
+    *   Fedora / Redhat : `sudo yum install python-matplotlib`
+*   **numpy** (_This is included in matplotlib - Esto esta incluido en matplotlib_)
+    *   `pip install numpy`
+*   **astropy** _Optional - Opcional_
+    *   `pip install --no-deps astropy`
+  
+<br/>
+<div id='Pipinstall'/>
+**How install pip? - ¿Como instalar pip?**
+* [**Windows**](http://stackoverflow.com/a/12476379/4941927)
+* **Linux or windows**, after python install you must type in cmd or terminal `easy_install pip` - Despues de instalar python debes escribir en el cmd or terminal `easy_install pip`
+* [**Installation documentation - Documentacion de la instalacion**](https://pip.pypa.io/en/stable/installing/)
 
-
+<br/>
 <div id='Howuse'/>
+###How use the algorithm? - ¿Como usar el algoritmo?##
 
-###How use? - ¿Como usar?##
+<div id='First-Step'/>
+**First Step - Primer Paso**
 
 Copy the text of `estadistica.py` in any text editor, in windows for example you could use `notepad`, then paste it and save the file as *any_name.py*, with `.py` extension.
 
@@ -110,14 +126,14 @@ self.data = """
 
 """
 ```
-
+<div id='Optional-Step'/>
 **Optional Step - Paso Opcional**
 
 if you want see a pretty tables:
 
-sees the penultimate line of code and change `it.printme(0)` by `it.printme(1)`, because 1 is astropy tables, which are nice, however if you cant install astropy could use 0 by default.
+sees the penultimate line of code and change `it.printme(0)` by `it.printme(1)`, because 1 enables astropy tables, which are nice, however if you cant install astropy could use 0 by default.
 
-Spanish: ve la penúltima línea de código y el cambio `it.printme (0)` por `it.printme (1)`, ya que 1 es astropy tablas, que están muy bien, sin embargo, si no puede instalar astropy podría utilizar 0 por defecto.
+Spanish: ve la penúltima línea de código y el cambio `it.printme (0)` por `it.printme (1)`, ya que 1 habilita tablas astropy, que están muy bonitas, sin embargo, si no puede instalar astropy podría utilizar 0 por defecto.
 
 * [See Astropy Tables - Ver Tablas Astropy](#Astropy) 
 * [See Default Table- Ver Tablas por Defecto](#Default)
@@ -125,9 +141,13 @@ Spanish: ve la penúltima línea de código y el cambio `it.printme (0)` por `it
 
 **Executing file - Ejecutando archivo**
 
-Run file with python `2.7` - Corre el archivo con python `2.7`, [How can I do it? - ¿Como puedo Yo Hacerlo?](https://stackoverflow.com/questions/1522564/how-do-i-run-a-python-program)
+How execute file? - ¿Como ejecutar archivo?:
 
+*   **Windows**, [see - ver](https://stackoverflow.com/questions/1522564/how-do-i-run-a-python-program)
+*   **Linux**, [see - ver](https://askubuntu.com/questions/244378/run-python-in-terminal)
+*   **Mac osx**, [see - ver](https://stackoverflow.com/questions/21492214/how-to-run-python-script-on-terminal)
 
+<div id='Results-Step'/>
 ##### Information Obtained After Execute - Informacion Obtenida Despues de Ejecutar:
 
 ```
@@ -152,7 +172,7 @@ Frecuencia Simple - Simple frequency
 El orden es: intervalos, frecuencia absoluta, frecuencia absoluta acomulada, frecuencia realtiva, marca de clase
 Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative frequency, mark of class
 ```
-
+<br/>
 <div id='Astropy'/>
 **Astropy Table**
 ```
@@ -166,6 +186,7 @@ Intervals  fi  Fi    fr    xi
    77, 82   5  79  6.25 %  79
    82, 87   1  80  1.25 %  84
 ```
+<br/>
 <div id='Default'/>
 **Default Table**
 ```
@@ -180,7 +201,12 @@ ________________________________________________________________________
 _________________________________________________________________________
 Intervals, fi ,  Fi , fr , xi 
 ```
+<br/>
 **Figures - Figuras**
 <div id='Figures'/>
-<img src="https://goo.gl/Nh2z9k" alt="histogram bar" width="780" height="580" border="10" />
+<img src="https://goo.gl/DbK780" alt="Figures" width="780" height="580" border="10" />
 
+<div id='License'/>
+## Copyright and license
+
+Code copyright 2016 Mateo Bohorquez. Code released under the [MIT license](https://github.com/Milor123/Estadistica-statistic-/blob/master/LICENSE)
