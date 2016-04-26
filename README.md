@@ -209,4 +209,4 @@ Intervals, fi ,  Fi , fr , xi
 <div id='License'/>
 ## Copyright and license
 
-Code copyright 2016 Mateo Bohorquez. Code released under the [MIT license](https://github.com/Milor123/Estadistica-statistic-/blob/master/LICENSE)
+Code copyright 2016-2020 Mateo Bohorquez. Code released under the [MIT license](https://github.com/Milor123/Estadistica-statistic-/blob/master/LICENSE)
