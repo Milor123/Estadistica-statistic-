@@ -204,7 +204,7 @@ Intervals, fi ,  Fi , fr , xi
 <br/>
 **Figures - Figuras**
 <div id='Figures'/>
-<img src="https://goo.gl/DbK780" alt="Figures" width="780" height="580" border="10" />
+<img src="https://goo.gl/8Lbb9u" alt="Figures" width="780" height="580" border="10" />
 
 <div id='License'/>
 ## Copyright and license
