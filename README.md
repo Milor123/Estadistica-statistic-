@@ -86,11 +86,11 @@ Now follows these steps:
 
 > You must write the information within `self.data`, if you need exact calculation, you should add a decimal value in any number, example the first number is 60, change it by 60.0 and then the rest will be changed automatically when you run the script
 
-You can add - Puedes Agregar:
+You can add:
 
-* numbers - numeros
-* spaces - espacios
-* jump of lines - saltos de linea
+* numbers
+* spaces
+* jump of lines
 * dot for decimals (decimal numbers)
 
 **Warning: Don't Use commas `,`**
