@@ -87,7 +87,7 @@ Puedes Agregar:
 * numbers - numeros
 * spaces - espacios
 * jump of lines - saltos de linea
-* dot for decimals (decimal numbers) - puntos para decimales (numeros decimales)
+* puntos para decimales (numeros decimales)
 
 **Advertencia: No uses comas `,`**
 
