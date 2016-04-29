@@ -3,6 +3,7 @@
 <div id='Description'/>
 
 ### Description - Descripcion
+-----------------------------
 
 This algorithm allows you to do calculations in `statistic descriptive` in one way very easy, because you only need paste the data and run the script
 
@@ -55,6 +56,7 @@ Spanish: Este algoritmo permite hacer cálculos en `descriptive estadística` de
 <br/>
 <div id='Requeriments'/>
 ### Requeriments - Requerimientos
+---------------------------------
 
 You must have a version of python as indicated below or greater, but `but this does not support python 3x`
 
@@ -84,6 +86,7 @@ Spanish: Debes tener una version de python como la que se indica a continuacion 
 <br/>
 <div id='Howuse'/>
 ###How use the algorithm? - ¿Como usar el algoritmo?##
+------------------------------------------------------
 
 <div id='First-Step'/>
 **First Step - Primer Paso**
