@@ -13,7 +13,7 @@ This algorithm allows you to do calculations in `statistic descriptive` in one w
 | -------------|:-----------:|-----------| --------:|
 | Min value | Absolute Frecuency | Histogram | [See Figures](#Figures)|
 | Max value | Mark of class | Frequency polygon|   [Results - Resultados](#Results-Step) |
-| Old range (Range) | Relative Frecuency - Frecuencia Relativa |Ascending Ogive - Ojiva Ascendente 
+| Old range (Range) | Relative Frecuency |Ascending Ogive
 | Range (New Range) | Cumulative Absolute Frequency |Descending Ogive|
 | Size of interval class | | Ogive Ascending and Descending 
 | Old amplitude (Amplitude) | | Circle Dragram
