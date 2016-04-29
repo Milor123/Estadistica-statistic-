@@ -55,7 +55,7 @@ Debes tener una version de python como la que se indica a continuacion o mayor, 
     *   `pip install matplotlib`
     *   Debian / Ubuntu : `sudo apt-get install python-matplotlib`
     *   Fedora / Redhat : `sudo yum install python-matplotlib`
-*   **numpy** (_This is included in matplotlib - Esto esta incluido en matplotlib_)
+*   **numpy** (_Esto esta incluido en matplotlib_)
     *   `pip install numpy`
 *   **astropy** _ Instalacion Opcional_
     *   `pip install --no-deps astropy`
@@ -64,8 +64,8 @@ Debes tener una version de python como la que se indica a continuacion o mayor, 
 <div id='Pipinstall'/>
 **¿Como instalar pip?**
 * [**Windows**](http://stackoverflow.com/a/12476379/4941927)
-* **Linux or windows**, after python install you must type in cmd or terminal `easy_install pip` - Despues de instalar python debes escribir en el cmd or terminal `easy_install pip`
-* [**Installation documentation - Documentacion de la instalacion**](https://pip.pypa.io/en/stable/installing/)
+* **Linux or windows**, Despues de instalar python debes escribir en el cmd or terminal `easy_install pip`
+* [**Documentacion de la instalacion**](https://pip.pypa.io/en/stable/installing/)
 
 <br/>
 <div id='Howuse'/>
