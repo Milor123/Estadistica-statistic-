@@ -10,7 +10,7 @@ This algorithm allows you to do calculations in `statistic descriptive` in one w
 **What can calculate?:**
 
 | Information  | Tables with  | Figures  | Examples |
-| -------------|:-----------:|-----------| --------:|
+| -------------|:-----------:|:-----------:| --------:|
 | Min value | Absolute Frecuency | Histogram | [See Figures](#Figures)|
 | Max value | Mark of class | Frequency polygon|   [Results - Resultados](#Results-Step) |
 | Old range (Range) | Relative Frecuency |Ascending Ogive
