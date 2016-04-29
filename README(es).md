@@ -90,9 +90,9 @@ Ahora sigue estos pasos:
 
 Puedes Agregar:
 
-* numbers - numeros
-* spaces - espacios
-* jump of lines - saltos de linea
+* numeros
+* nespacios
+* saltos de linea
 * puntos para decimales (numeros decimales)
 
 **Advertencia: No uses comas `,`**
