@@ -1,6 +1,11 @@
 #Descriptive statistics
 
 <div id='Description'/>
+<a href="https://github.com/Milor123/Estadistica-statistic-/blob/master/README%28es%29.md">
+<img align="right" src ="https://cdn2.iconfinder.com/data/icons/flags/flags/48/Spain.png" width="50" height="50"/></a>
+<a href="https://github.com/Milor123/Estadistica-statistic-/blob/master/README.md">
+<img align="right" src ="https://cdn1.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_United_Kingdom_-_Circle-128.png" width="50" height="50"/></a>
+
 
 ### Description
 -----------------------------
