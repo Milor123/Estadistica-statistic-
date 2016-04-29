@@ -13,7 +13,7 @@
 
 Este algoritmo permite hacer cálculos en `descriptive estadística` de una manera muy fácil, ya que sólo necesita pegar los datos y ejecutar el script
 
-**What can calculate? - ¿Que puede calcular?:**
+**¿Que puede calcular?:**
 
 | Informacion | Tablas con  | Figuras  | Ejemplos |
 | ------------- |:------------------------:|-----------------| -----:|
