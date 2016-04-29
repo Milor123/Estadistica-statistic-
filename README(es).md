@@ -79,7 +79,7 @@ Debes tener una version de python como la que se indica a continuacion o mayor, 
 ------------------------------------------------------
 
 <div id='First-Step'/>
-** Primer Paso**
+**Primer Paso**
 
 Copia el text de `estadistica.py` en cualquier editor, en windows por ejemplo podrias usar `notepad`, luego pegalo and guarda el archivo como *cualquier_nombre.py*, con la extension `.py`
 
