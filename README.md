@@ -1,93 +1,85 @@
-# Estadistica Descriptiva - Descriptive statistics
+#Descriptive statistics
 
 <div id='Description'/>
 
-### Description - Descripcion
+### Description
 -----------------------------
 
 This algorithm allows you to do calculations in `statistic descriptive` in one way very easy, because you only need paste the data and run the script
 
-Spanish: Este algoritmo permite hacer cálculos en `descriptive estadística` de una manera muy fácil, ya que sólo necesita pegar los datos y ejecutar el script
+**What can calculate?:**
 
-**What can calculate? - ¿Que puede calcular?:**
-
-| Information - Informacion | Tables with - Tablas con              | Figures - Figuras      | Examples - Ejemplos |
-| -------------             |:-----------------------------------:|------------------------------------------------| -----:|
-| Min value - Dato minimo   | Absolute Frecuency - Frecuencia Absoluta|Histogram - Histograma   | [See Figures - Ver Figuras](#Figures)|
-| Max value - Dato maximo   | Mark of class - Marca de clase |Frequency polygon - Poligono de Frecuencia     |   [Results - Resultados](#Results-Step) |
-| Old range - Viejo rango   | Relative Frecuency - Frecuencia Relativa |Ascending Ogive - Ojiva Ascendente 
-| Range - Rango             | Cumulative Absolute Frequency - Frecuencia Absoluta Acumulada |Descending Ogive - Ojiva Descendente
-| Size of interval class    | | Ogive Ascending and Descending - Ojiva Asendente y Descendente 
-| Old amplitude - Vieja amplitud | | Circle Dragram - Diagrama Circular
-| Amplitude - Amplitud
-| Old excess - Viejo exceso
-| Excess - Exceso
-| Maximun sample size - Tamaño de muestra
-| Mark of class - Marca de clase
-| Simple frequency - Frecuencia Simple
+| Information  | Tables with  | Figures  | Examples |
+| -------------|:-----------:|-----------| --------:|
+| Min value | Absolute Frecuency | Histogram | [See Figures](#Figures)|
+| Max value | Mark of class | Frequency polygon|   [Results - Resultados](#Results-Step) |
+| Old range (Range) | Relative Frecuency - Frecuencia Relativa |Ascending Ogive - Ojiva Ascendente 
+| Range (New Range) | Cumulative Absolute Frequency |Descending Ogive|
+| Size of interval class | | Ogive Ascending and Descending 
+| Old amplitude (Amplitude) | | Circle Dragram
+| Amplitude (New Amplitude)
+| Old excess (Excess)
+| Excess (New Excess)
+| Maximun sample size
+| Mark of class
+| Simple frequency
 
 <br/>
 <div id='Table'/>
-## Table of Contents - Tabla de contenido
-1.  [Description - Descripcion](#Description)
-2.  [Table of contens - Tabla de contenido](#Table)
-3.  [Requeriments - Requerimientos](#Requeriments)
-    1.  [Basic requeriments - Requerimientos basicos](#BRequeriments)
-    2.  [How install pip - Como instalar pip](#Pipinstall)
-4.  [How use - Como usar](#Howuse)
-    1.  [First step - Primer paso](#First-Step)
-    2.  [Example - Ejemplo](#Example)
-    3.  [Optional step - Paso opcional](#Optional-Step)
-    4.  [Results - Resultados](#Results-Step)
+## Table of Contents
+1.  [Description](#Description)
+2.  [Table of contens](#Table)
+3.  [Requeriments](#Requeriments)
+    1.  [Basic requeriments](#BRequeriments)
+    2.  [How install pip](#Pipinstall)
+4.  [How use](#Howuse)
+    1.  [First step](#First-Step)
+    2.  [Example](#Example)
+    3.  [Optional step](#Optional-Step)
+    4.  [Results](#Results-Step)
 5. [Copyright and license](#License)
 
 <br/>
 <div id='Requeriments'/>
-### Requeriments - Requerimientos
+### Requeriments
 ---------------------------------
 
 You must have a version of python as indicated below or greater, but `but this does not support python 3x`
 
-Spanish: Debes tener una version de python como la que se indica a continuacion o mayor, `pero no soporta python 3x`
-
 <div id='BRequeriments'/>
 
 *   **python 2.7x**
-    *   Windows : [Download - Descargar](https://www.python.org/downloads/release/python-279/)
+    *   Windows : [Download](https://www.python.org/downloads/release/python-279/)
     *   Debian / Ubuntu: `sudo apt-get install python2.7`
-*   **matplotlib** (_This is included in python2.7+ - Esto esta incluido en python2.7+_)
+*   **matplotlib** (_This is included in python2.7+_)
     *   `pip install matplotlib`
     *   Debian / Ubuntu : `sudo apt-get install python-matplotlib`
     *   Fedora / Redhat : `sudo yum install python-matplotlib`
-*   **numpy** (_This is included in matplotlib - Esto esta incluido en matplotlib_)
+*   **numpy** (_This is included in matplotlib_)
     *   `pip install numpy`
-*   **astropy** _Optional - Opcional_
+*   **astropy** _Optional Instalation_
     *   `pip install --no-deps astropy`
   
 <br/>
 <div id='Pipinstall'/>
-**How install pip? - ¿Como instalar pip?**
+**How install pip?**
 * [**Windows**](http://stackoverflow.com/a/12476379/4941927)
 * **Linux or windows**, after python install you must type in cmd or terminal `easy_install pip` - Despues de instalar python debes escribir en el cmd or terminal `easy_install pip`
-* [**Installation documentation - Documentacion de la instalacion**](https://pip.pypa.io/en/stable/installing/)
+* [**Installation documentation**](https://pip.pypa.io/en/stable/installing/)
 
 <br/>
 <div id='Howuse'/>
-###How use the algorithm? - ¿Como usar el algoritmo?##
+###How use the algorithm?##
 ------------------------------------------------------
 
 <div id='First-Step'/>
-**First Step - Primer Paso**
+**First Step**
 
 Copy the text of `estadistica.py` in any text editor, in windows for example you could use `notepad`, then paste it and save the file as *any_name.py*, with `.py` extension.
 
-Spanish: Copia el text de `estadistica.py` en cualquier editor, en windows por ejemplo podrias usar `notepad`, luego pegalo and guarda el archivo como *cualquier_nombre.py*, con la extension `.py`
-
-Now follows these steps - Ahora sigue estos pasos: 
+Now follows these steps: 
 
 > You must write the information within `self.data`, if you need exact calculation, you should add a decimal value in any number, example the first number is 60, change it by 60.0 and then the rest will be changed automatically when you run the script
-
-> Spanish: Debe escribir la información dentro de `con self.data`, si necesita cálculo exacto, se debe añadir un valor decimal en cualquier número, ejemplo, el primer número 60, cambiarlo por 60.0 y luego el resto se cambiará automáticamente cuando se ejecutar el script
 
 You can add - Puedes Agregar:
 
@@ -96,11 +88,11 @@ You can add - Puedes Agregar:
 * jump of lines - saltos de linea
 * dot for decimals (decimal numbers) - puntos para decimales (numeros decimales)
 
-*Warning: Don't Use commas `,`*
+**Warning: Don't Use commas `,`**
 
 <div id='Example'/>
 
-##### Example - Ejemplo:
+##### Example:
 
 ```
 self.data = """
@@ -118,28 +110,25 @@ self.data = """
 """
 ```
 <div id='Optional-Step'/>
-**Optional Step - Paso Opcional**
+**Optional Step**
 
 if you want see a pretty tables:
 
 sees the penultimate line of code and change `it.printme(0)` by `it.printme(1)`, because 1 enables astropy tables, which are nice, however if you cant install astropy could use 0 by default.
 
-Spanish: ve la penúltima línea de código y el cambio `it.printme (0)` por `it.printme (1)`, ya que 1 habilita tablas astropy, que están muy bonitas, sin embargo, si no puede instalar astropy podría utilizar 0 por defecto.
+* [See Astropy Table](#Astropy) 
+* [See Default Table](#Default)
 
-* [See Astropy Tables - Ver Tablas Astropy](#Astropy) 
-* [See Default Table- Ver Tablas por Defecto](#Default)
+**Executing file**
 
-
-**Executing file - Ejecutando archivo**
-
-How execute file? - ¿Como ejecutar archivo?:
+How execute file?:
 
 *   **Windows**, [see - ver](https://stackoverflow.com/questions/1522564/how-do-i-run-a-python-program)
 *   **Linux**, [see - ver](https://askubuntu.com/questions/244378/run-python-in-terminal)
 *   **Mac osx**, [see - ver](https://stackoverflow.com/questions/21492214/how-to-run-python-script-on-terminal)
 
 <div id='Results-Step'/>
-##### Information Obtained After Execute - Informacion Obtenida Despues de Ejecutar:
+##### Information Obtained After Execute:
 
 ```
 Datos ordenados - Organized information
