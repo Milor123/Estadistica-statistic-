@@ -64,7 +64,7 @@ You must have a version of python as indicated below or greater, but `but this d
 <div id='Pipinstall'/>
 **How install pip?**
 * [**Windows**](http://stackoverflow.com/a/12476379/4941927)
-* **Linux or windows**, after python install you must type in cmd or terminal `easy_install pip` - Despues de instalar python debes escribir en el cmd or terminal `easy_install pip`
+* **Linux or windows**, after python install you must type in cmd or terminal `easy_install pip`
 * [**Installation documentation**](https://pip.pypa.io/en/stable/installing/)
 
 <br/>
@@ -86,7 +86,7 @@ You can add - Puedes Agregar:
 * numbers - numeros
 * spaces - espacios
 * jump of lines - saltos de linea
-* dot for decimals (decimal numbers) - puntos para decimales (numeros decimales)
+* dot for decimals (decimal numbers)
 
 **Warning: Don't Use commas `,`**
 
