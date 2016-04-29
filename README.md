@@ -12,11 +12,11 @@ Spanish: Este algoritmo permite hacer cálculos en `descriptive estadística` de
 **What can calculate? - ¿Que puede calcular?:**
 
 | Information - Informacion | Tables with - Tablas con              | Figures - Figuras      | Examples - Ejemplos |
-| -------------             |-----------------------------------    |------------------------------------------------| -----:|
-| Min value - Dato minimo   | fi |Histogram - Histograma                         | [See Figures - Ver Figuras](#Figures)|
-| Max value - Dato maximo   | xi |Frequency polygon - Poligono de Frecuencia     |   [Results - Resultados](#Results-Step) |
-| Old range - Viejo rango   | fr |Ascending Ogive - Ojiva Ascendente 
-| Range - Rango             | Fi |Descending Ogive - Ojiva Descendente
+| -------------             |:-----------------------------------:|------------------------------------------------| -----:|
+| Min value - Dato minimo   | Absolute Frecuency - Frecuencia Absoluta|Histogram - Histograma   | [See Figures - Ver Figuras](#Figures)|
+| Max value - Dato maximo   | Mark of class - Marca de clase |Frequency polygon - Poligono de Frecuencia     |   [Results - Resultados](#Results-Step) |
+| Old range - Viejo rango   | Relative Frecuency - Frecuencia Relativa |Ascending Ogive - Ojiva Ascendente 
+| Range - Rango             | Cumulative Absolute Frequency - Frecuencia Absoluta Acumulada |Descending Ogive - Ojiva Descendente
 | Size of interval class    | | Ogive Ascending and Descending - Ojiva Asendente y Descendente 
 | Old amplitude - Vieja amplitud | | Circle Dragram - Diagrama Circular
 | Amplitude - Amplitud
