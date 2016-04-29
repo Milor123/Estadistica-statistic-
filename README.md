@@ -11,20 +11,19 @@ Spanish: Este algoritmo permite hacer cálculos en `descriptive estadística` de
 
 **What can calculate? - ¿Que puede calcular?:**
 
-| Information - Informacion        | Figures                                        | Examples  |
-| -------------                    |----------------------------------------------| -----:|
-| Min value - Dato minimo      | Histogram - Histograma | [See Figures - Ver Figuras](#Figures)|
-| Max value - Dato maximo      | Frequency polygon - Poligono de Frecuencia      |   [Results - Resultados](#Results-Step) |
-| Old range - Viejo rango      | Ascending Ogive - Ojiva Ascendente 
-| Range - Rango                | Descending Ogive - Ojiva Descendente
-| Size of interval class       | Ogive Ascending and Descending - Ojiva Asendente y Descendente 
-| Old amplitude - Vieja amplitud | Circle Dragram - Diagrama Circular
+| Information - Informacion | Tables with - Tablas con              | Figures - Figuras      | Examples - Ejemplos |
+| -------------             |-----------------------------------    |------------------------------------------------| -----:|
+| Min value - Dato minimo   | fi |Histogram - Histograma                         | [See Figures - Ver Figuras](#Figures)|
+| Max value - Dato maximo   | xi |Frequency polygon - Poligono de Frecuencia     |   [Results - Resultados](#Results-Step) |
+| Old range - Viejo rango   | fr |Ascending Ogive - Ojiva Ascendente 
+| Range - Rango             | Fi |Descending Ogive - Ojiva Descendente
+| Size of interval class    | | Ogive Ascending and Descending - Ojiva Asendente y Descendente 
+| Old amplitude - Vieja amplitud | | Circle Dragram - Diagrama Circular
 | Amplitude - Amplitud
 | Old excess - Viejo exceso
 | Excess - Exceso
 | Maximun sample size - Tamaño de muestra
 | Mark of class - Marca de clase
-| Absolute frequency - Frecuencia Absoluta
 | Simple frequency - Frecuencia Simple
 
 <br/>
