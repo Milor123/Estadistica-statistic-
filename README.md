@@ -11,32 +11,21 @@ Spanish: Este algoritmo permite hacer cálculos en `descriptive estadística` de
 
 **What can calculate? - ¿Que puede calcular?:**
 
-- [x] Organized information - Datos ordenados
-- [x] Min value - Dato minimo 
-- [x] Max value - Dato maximo
-- [x] Old range - Viejo rango (# Range Before of recalculate - # Rango antes de recalcularlo)
-- [x] Range - Rango
-- [x] Size of interval class (Sturges Rule) - Tamano de clase (Regla de Sturges)
-- [x] Old amplitude - Vieja amplitud
-- [x] Amplitude - Amplitud
-- [x] Old excess - Viejo exceso
-- [x] Excess - Exceso
-- [x] Maximun sample size - Tamaño de muestra
-- [x] Mark of class - Marca de clase
-- [x] Absolute frequency - Frecuencia Absoluta
-- [x] Simple frequency - Frecuencia Simple
-
-**Also generates figures such as - Tambien genera figuras como:**
-
-[See Figures - Ver Figuras](#Figures)
-
-- [x] Histogram - Histograma
-- [x] Frequency polygon - Poligono de Frecuencia
-- [x] Ascending Ogive - Ojiva Ascendente
-- [x] Descending Ogive - Ojiva Descendente
-- [x] Ogive Ascending and Descending - Ojiva Asendente y Descendente 
-- [x] Circle Dragram - Diagrama Circular
-   * with Relative frequency - con Frecuencia Relativa
+| Information - Informacion        | Figures                                        | Examples  |
+| -------------                    |----------------------------------------------| -----:|
+| Min value - Dato minimo      | Histogram - Histograma | [See Figures - Ver Figuras](#Figures)|
+| Max value - Dato maximo      | Frequency polygon - Poligono de Frecuencia      |   [Results - Resultados](#Results-Step) |
+| Old range - Viejo rango      | Ascending Ogive - Ojiva Ascendente 
+| Range - Rango                | Descending Ogive - Ojiva Descendente
+| Size of interval class       | Ogive Ascending and Descending - Ojiva Asendente y Descendente 
+| Old amplitude - Vieja amplitud | Circle Dragram - Diagrama Circular
+| Amplitude - Amplitud
+| Old excess - Viejo exceso
+| Excess - Exceso
+| Maximun sample size - Tamaño de muestra
+| Mark of class - Marca de clase
+| Absolute frequency - Frecuencia Absoluta
+| Simple frequency - Frecuencia Simple
 
 <br/>
 <div id='Table'/>
