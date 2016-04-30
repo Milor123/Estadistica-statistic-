@@ -162,7 +162,7 @@ Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative
 ```
 <br/>
 <div id='Astropy'/>
-**Astropy Table**
+**Tabla Astropy*
 ```
 Intervals  fi  Fi    fr    xi
 --------- --- --- ------- ---
@@ -176,7 +176,7 @@ Intervals  fi  Fi    fr    xi
 ```
 <br/>
 <div id='Default'/>
-**Default Table**
+**Tabla por Defecto**
 ```
 ________________________________________________________________________
 |  52, 57  |  3  |  3  |  3.75 %  |  54  |
