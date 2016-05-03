@@ -91,7 +91,7 @@ Ahora sigue estos pasos:
 Puedes Agregar:
 
 * numeros
-* nespacios
+* espacios
 * saltos de linea
 * puntos para decimales (numeros decimales)
 
