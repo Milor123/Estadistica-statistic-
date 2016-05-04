@@ -86,7 +86,7 @@ Copia el text de `estadistica.py` en cualquier editor, en windows por ejemplo po
 Ahora sigue estos pasos: 
 
 
-> Debes escribir la información dentro de `con self.data`, si necesitas hacer un cálculo exacto,  añade un valor decimal en cualquier número, ejemplo, el primer número 60, cambiarlo por 60.0 y luego el resto se cambiará automáticamente cuando se ejecutar el script
+> Debes escribir la información dentro de `self.data`, si necesitas hacer un cálculo exacto,  añade un valor decimal en cualquier número, ejemplo, el primer número 60, cambiarlo por 60.0 y luego el resto se cambiará automáticamente cuando se ejecutar el script
 
 Puedes Agregar:
 
@@ -162,7 +162,7 @@ Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative
 ```
 <br/>
 <div id='Astropy'/>
-**Tabla Astropy*
+**Tabla Astropy**
 ```
 Intervals  fi  Fi    fr    xi
 --------- --- --- ------- ---
