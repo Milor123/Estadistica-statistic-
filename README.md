@@ -56,7 +56,7 @@ You must have a version of python as indicated below or greater, but `but this d
 *   **python 2.7x**
     *   Windows : [Download](https://www.python.org/downloads/release/python-279/)
     *   Debian / Ubuntu: `sudo apt-get install python2.7`
-*   **matplotlib** (_This is included in python2.7+_)
+*   **matplotlib**
     *   `pip install matplotlib`
     *   Debian / Ubuntu : `sudo apt-get install python-matplotlib`
     *   Fedora / Redhat : `sudo yum install python-matplotlib`
