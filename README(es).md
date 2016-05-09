@@ -63,7 +63,7 @@ Debes tener una version de python como la que se indica a continuacion o mayor, 
     *   Fedora / Redhat : `sudo yum install python-matplotlib`
 *   **numpy** (_Esto esta incluido en matplotlib_)
     *   `pip install numpy`
-*   **astropy** _ Instalacion Opcional_
+*   **astropy** _Instalacion Opcional_
     *   `pip install --no-deps astropy`
   
 <br/>
