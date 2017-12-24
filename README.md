@@ -1,4 +1,4 @@
-### Descriptive statistics
+# Descriptive statistics
 
 <div id='Description'/>
 <a href="https://github.com/Milor123/Estadistica-statistic-/blob/master/README%28es%29.md">
@@ -31,6 +31,7 @@ This algorithm allows you to do calculations in `statistic descriptive` in one w
 
 <br/>
 <div id='Table'/>
+
 ## Table of Contents
 1.  [Description](#Description)
 2.  [Table of contens](#Table)
@@ -46,6 +47,7 @@ This algorithm allows you to do calculations in `statistic descriptive` in one w
 
 <br/>
 <div id='Requeriments'/>
+
 ### Requeriments
 ---------------------------------
 
@@ -192,6 +194,7 @@ Intervals, fi ,  Fi , fr , xi
 <img src="https://goo.gl/8Lbb9u" alt="Figures" width="780" height="580" border="10" />
 
 <div id='License'/>
+
 ## Copyright and license
 
 Code copyright 2016-2020 Mateo Bohorquez. Code released under the [MIT license](https://github.com/Milor123/Estadistica-statistic-/blob/master/LICENSE)
