@@ -1,4 +1,4 @@
-#Descriptive statistics
+# Descriptive statistics
 
 <div id='Description'/>
 <a href="https://github.com/Milor123/Estadistica-statistic-/blob/master/README%28es%29.md">
@@ -74,7 +74,7 @@ You must have a version of python as indicated below or greater, but `but this d
 
 <br/>
 <div id='Howuse'/>
-###How use the algorithm?##
+### How use the algorithm?##
 ------------------------------------------------------
 
 <div id='First-Step'/>
