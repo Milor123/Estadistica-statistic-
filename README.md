@@ -97,7 +97,7 @@ You can add:
 
 <div id='Example'/>
 
-##### Example:
+#### Example:
 
 ```
 self.data = """
@@ -133,7 +133,7 @@ How execute file?:
 *   **Mac osx**, [see - ver](https://stackoverflow.com/questions/21492214/how-to-run-python-script-on-terminal)
 
 <div id='Results-Step'/>
-##### Information Obtained After Execute:
+### Information Obtained After Execute:
 
 ```
 Datos ordenados - Organized information
