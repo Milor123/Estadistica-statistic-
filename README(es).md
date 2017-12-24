@@ -32,6 +32,7 @@ Este algoritmo permite hacer cálculos en `descriptive estadística` de una mane
 
 <br/>
 <div id='Table'/>
+
 ## Tabla de contenido
 1.  [Descripcion](#Description)
 2.  [Tabla de contenido](#Table)
@@ -47,6 +48,7 @@ Este algoritmo permite hacer cálculos en `descriptive estadística` de una mane
 
 <br/>
 <div id='Requeriments'/>
+
 ### Requerimientos
 ---------------------------------
 
@@ -68,6 +70,7 @@ Debes tener una version de python como la que se indica a continuacion o mayor, 
   
 <br/>
 <div id='Pipinstall'/>
+
 **¿Como instalar pip?**
 * [**Windows**](http://stackoverflow.com/a/12476379/4941927)
 * **Linux or windows**, Despues de instalar python debes escribir en el cmd or terminal `easy_install pip`
@@ -75,10 +78,12 @@ Debes tener una version de python como la que se indica a continuacion o mayor, 
 
 <br/>
 <div id='Howuse'/>
-###¿Como usar el algoritmo?##
+
+### ¿Como usar el algoritmo?##
 ------------------------------------------------------
 
 <div id='First-Step'/>
+
 **Primer Paso**
 
 Copia el text de `estadistica.py` en cualquier editor, en windows por ejemplo podrias usar `notepad`, luego pegalo and guarda el archivo como *cualquier_nombre.py*, con la extension `.py`
@@ -117,6 +122,7 @@ self.data = """
 """
 ```
 <div id='Optional-Step'/>
+
 **Paso Opcional**
 
 Si quieres unas lindas tablas:
@@ -136,6 +142,7 @@ Ve la penúltima línea de código y el cambio `it.printme (0)` por `it.printme 
 *   **Mac osx**, [ver](https://stackoverflow.com/questions/21492214/how-to-run-python-script-on-terminal)
 
 <div id='Results-Step'/>
+
 ##### Informacion Obtenida Despues de Ejecutar:
 
 ```
@@ -162,6 +169,7 @@ Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative
 ```
 <br/>
 <div id='Astropy'/>
+
 **Tabla Astropy**
 ```
 Intervals  fi  Fi    fr    xi
@@ -176,6 +184,7 @@ Intervals  fi  Fi    fr    xi
 ```
 <br/>
 <div id='Default'/>
+
 **Tabla por Defecto**
 ```
 ________________________________________________________________________
@@ -190,11 +199,13 @@ _________________________________________________________________________
 Intervals, fi ,  Fi , fr , xi 
 ```
 <br/>
+
 **Figuras**
 <div id='Figures'/>
 <img src="https://goo.gl/8Lbb9u" alt="Figures" width="780" height="580" border="10" />
 
 <div id='License'/>
+
 ## Copyright y licencia
 
 Codigo copyright 2016-2020 Mateo Bohorquez. Codigo liberado bajo la [licencia MIT](https://github.com/Milor123/Estadistica-statistic-/blob/master/LICENSE)
