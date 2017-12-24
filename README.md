@@ -197,7 +197,7 @@ Intervals, fi ,  Fi , fr , xi
 ```
 <br/>
 
-**Figures - Figuras**
+**Figures**
 <div id='Figures'/>
 
 <img src="https://goo.gl/8Lbb9u" alt="Figures" width="780" height="580" border="10" />
