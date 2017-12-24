@@ -69,6 +69,7 @@ You must have a version of python as indicated below or greater, but `but this d
   
 <br/>
 <div id='Pipinstall'/>
+
 **How install pip?**
 * [**Windows**](http://stackoverflow.com/a/12476379/4941927)
 * **Linux or windows**, after python install you must type in cmd or terminal `easy_install pip`
@@ -76,10 +77,12 @@ You must have a version of python as indicated below or greater, but `but this d
 
 <br/>
 <div id='Howuse'/>
+
 ### How use the algorithm?##
 ------------------------------------------------------
 
 <div id='First-Step'/>
+
 **First Step**
 
 Copy the text of `estadistica.py` in any text editor, in windows for example you could use `notepad`, then paste it and save the file as *any_name.py*, with `.py` extension.
@@ -117,6 +120,7 @@ self.data = """
 """
 ```
 <div id='Optional-Step'/>
+
 **Optional Step**
 
 if you want see a pretty tables:
@@ -135,6 +139,7 @@ How execute file?:
 *   **Mac osx**, [see - ver](https://stackoverflow.com/questions/21492214/how-to-run-python-script-on-terminal)
 
 <div id='Results-Step'/>
+
 ### Information Obtained After Execute:
 
 ```
@@ -161,6 +166,7 @@ Order is: Intervals, Absolute frequency, Cumulative absolute frequency, relative
 ```
 <br/>
 <div id='Astropy'/>
+
 **Astropy Table**
 ```
 Intervals  fi  Fi    fr    xi
@@ -175,6 +181,7 @@ Intervals  fi  Fi    fr    xi
 ```
 <br/>
 <div id='Default'/>
+
 **Default Table**
 ```
 ________________________________________________________________________
